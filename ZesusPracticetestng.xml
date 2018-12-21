@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="10" configfailurepolicy="continue">
+  <test thread-count="5" name="Test">
+  <parameter name="baseUrl" value="https://zeus.qa5.vonagenetworks.net"/>
+ <parameter name="browser" value="chrome" />
+    <classes>
+    
+ <!--    
+    
+ <class name ="testCases.PaymentsInvoiceVerification"/>
+ 
+ <class name ="testCases.ProjectsDropDown"/>
+  <class name ="testCases.ReportingDropDown"/>
+ 
+ <class name ="testCases.VerifyAccountsIfActive"/>
+  <class name ="testCases.SearchDropDown"/>
+
+<class name="testCases.Customer_DashBoard_information"/> 
+ <class name="testCases.Billing_A_contract"/> 
+ <class name="testCases.TC_1_1_ImportNumbersToHaveSMS_service"/>
+  <class name="testCases.FAXAddDeleteModify" /> 
+<class name ="testCases.Billing_C_CreditRequest" />
+
+	<class name="testCases.DNS"/>	 
+
+	<class name="testCases.CDRConfig"/> 
+
+
+
+<class name = "testCases.TC_1_98_QuoteGenaration" />
+<class name = "testCases.TC_1_5_CustomerDashboard_Data_CDR_Config" />  
+<class name = "testCases.TC_1_98_QuoteGenaration" /> 
+<class name = "testCases.TC_1_92_Task_Calendar" />  
+<class name ="testCases.Billing_C_CreditRequest" />
+<class name = "testCases.ProjectsDropDown" />  
+
+
+<class name = "testCases.ReportingDropDown" />  
+<class name ="testCases.SearchDropDown" />
+ -->
+ <class name ="testCases.VerifyAccountsIfActive"/>
+  
+ 
+ 
+
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

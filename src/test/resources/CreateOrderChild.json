@@ -1,0 +1,87 @@
+{
+  "contacts" : [
+    {
+      "active" : "true",
+      "emailAddress" : "$emailAddress",
+      "externalContactID" : "$externalContactID",
+      "firstName" : "$firstName",
+      "lastName" : "$lastName",
+      "types" : [
+        "billing",
+        "afterHours",
+        "primary",
+        "technical",
+        "onsite",
+        "authorized"
+      ]
+    }
+  ],
+  "customer" : {
+    "billingAddress" : {
+      "city" : "Holmdel",
+      "country" : "US",
+      "line1" : "22 W Main Street",
+      "line2" : "",
+      "stateOrProvince" : "NJ",
+      "zipOrPostalCode" : "07733"
+    },
+    "installAddress" : {
+      "city" : "HOLMDEL",
+      "country" : "US",
+      "line1" : "45 W MAIN ST",
+      "line2" : "",
+      "stateOrProvince" : "NJ",
+      "zipOrPostalCode" : "07733"
+    },
+    "locationName" : "$locationName",
+    "name" : "$name",
+    "parentCustomerID" : "00000",
+    "paymentAccountID" : "",
+    "salesMarket" : "",
+    "salesPerson" : {
+      "emailAddress" : "sfdcvon@gmail.com",
+      "externalID" : "00554000000kYU3AAM",
+      "firstName" : "Premier",
+      "lastName" : "Sales Closer"
+    },
+    "salesTeam" : "",
+    "taxExemptStatus" : "None"
+  },
+  "externalLocationID" : "",
+  "externalQuoteID" : "a39540000000iWeAAI",
+  "order" : {
+    "description" : "$description",
+    "externalQuoteNumber" : "Q204776",
+    "gmApprovedDate" : "$gmApprovedDate",
+    "products" : [
+      {
+        "circuitQuoteID" : "",
+        "discountmrr" : 0,
+        "discountnrr" : 17,
+        "icbType" : "",
+        "listmrr" : 0,
+        "listnrr" : 17,
+        "mrc" : 0,
+        "name" : "Activation Fee",
+        "nrc" : 17,
+        "quantity" : 1,
+        "sku" : "V-3756.a",
+        "subscriptionType" : "Service"
+      }
+    ],
+    "requestedInstallDate" : null,
+    "salesMarket" : "",
+    "salesPerson" : {
+      "emailAddress" : "sfdcvon@gmail.com",
+      "externalID" : "00554000000kYU3AAM",
+      "firstName" : "Premier",
+      "lastName" : "Sales Closer"
+    },
+    "signedDate" : null,
+    "stage" : "Ready for Service Delivery",
+    "subject" : "Order For location 20",
+    "team" : "null - null",
+    "term" : 36
+  },
+  "uuID" : "05057"
+}
