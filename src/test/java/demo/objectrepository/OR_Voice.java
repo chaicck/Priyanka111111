@@ -63,4 +63,7 @@ public interface OR_Voice {
     String voice_Number_manage_moveCheckedTnsBtn_save="xpath=//button[text()='Save']";
     
     String voice_Number_manage_table_start="xpath=//*[@id='number_table']/tbody/tr/td[8]";
+    
+    String voice_number_penIcons_customer_shippingAddress_searchBox="xpath=//div[@class='chosen-search']/input";
+    String voice_number_penIcons_customer_shippingAddress_searchResult="xpath=//ul[@class='chosen-results']/li";
 }

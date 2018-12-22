@@ -381,14 +381,26 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 	 * This method is used to get the elements associated with same locator into
 	 * LIST & verify the list of texts in a LIST with given list
 	 */
-	public void verifyAllListValuesInOrder(String locator, List<String> l)
+	public boolean verifyAllListValuesInOrder(String locator, List<String> l)
 			throws Throwable {
-
+		boolean flag = false;
 		List<String> list = getAllTheText(locator);
 		for (int i = 0; i < list.size(); i++) {
-			Assert.assertTrue(list.get(i).contains(l.get(i)));
+			if(list.get(i).contains(l.get(i)))
+			{
+				flag = true;
+				logger.log(LogStatus.PASS,"List of value in order -->"+ list.get(i));
+				System.out.println("List of value in order -->"+ list.get(i));
+			}
+			else
+			{
+				flag = false;
+				logger.log(LogStatus.FAIL,"List of value not in order -->"+ list.get(i));
+				System.out.println("List of value not in order -->"+ list.get(i));
+				break;
+			}
 		}
-
+		return flag;
 	}
 
 	/**
@@ -579,13 +591,14 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 					&& getTextByXpath(
 							"((//table[@id='customer_table']/tbody/tr)[" + i
 									+ "]/td)[6]").equalsIgnoreCase("Active")) {
-				actionsClick("xpath=(//table[@id='customer_table']/tbody/tr)[" + i
+				click("xpath=(//table[@id='customer_table']/tbody/tr)[" + i
 						+ "]/td[1]/ul/li[2]/a", "$Button");
-				actionsClick("xpath=(//table[@id='customer_table']/tbody/tr)[" + i
+				click("xpath=(//table[@id='customer_table']/tbody/tr)[" + i
 						+ "]/td[1]/ul/li[2]/ul/li[5]/a", "invoiceButton");
-				actionsClick("xpath=//a[@class='btn btn-success btn-sm pull-right']",
+				click("xpath=//a[@class='btn btn-success btn-sm pull-right']",
 						"exportButton");
-				actionsClick("xpath=(//i[@class='glyphicon  glyphicon-search '])[3]",
+				Thread.sleep(3000);
+				click("xpath=(//i[@class='glyphicon  glyphicon-search '])[3]",
 						"invoiceButton");
 				actionsClick("xpath=//button[@class='close']",
 						"invoiceCloseButton");
@@ -695,16 +708,22 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 	public void afterMethod(ITestResult result) throws Throwable {
 
 		try {
-			if(result.getStatus()__ITestResult.FAILURE) {
-				
-			}
-		}
-		
-		
-		extent.endTest(logger);
-			extentTestEndflag = true;
-			extent.flush();
-			Driver.close();
+	        if(result.getStatus()==ITestResult.FAILURE){
+	            logger.log(LogStatus.FAIL,"Failed test is: "+result.getName());
+	            logger.log(LogStatus.FAIL, result.getThrowable());
+//	            logger.log(LogStatus.FAIL, logger.addScreenCapture(capture(Driver, "screenShot")));
+	        }
+	        else if(result.getStatus()==ITestResult.SKIP){
+	            logger.log(LogStatus.SKIP,"Skipped test is: "+result.getName());
+	        } 
+	    	}
+	     
+	        finally {	
+	        extent.endTest(logger);
+	        extentTestEndflag=true;
+	        extent.flush();
+	    	Driver.close();;
+	        }
 	}
 
 	/**
@@ -1119,6 +1138,26 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		}
 		return flag;
 
+	}
+	
+	protected boolean verifyMenuNotification(String menu,String subMenu,String panelTitle, String text) throws Throwable
+	{
+		boolean flag = false;
+		JSClick(menu);
+		JSClick(subMenu);
+		waitForElementPresent(panelTitle, 60);
+		flag = verifyText(panelTitle, text, "Panel Title");
+		return flag;
+		
+	}
+	
+	protected boolean verifyByReducingBrowseSize(String reports, String menu,String submenu, String textElement, String text) throws Throwable {
+		setBrowserTo80Size();
+		aclick(reports,"Reports Link");
+		aactionsClick(menu,menu);		
+		aJSClick(submenu,submenu);
+        waitForElementPresent(textElement, 200);
+        return verifyText(textElement,  text, "Verifying HeadLine text");
 	}
 	
 	

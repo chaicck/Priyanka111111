@@ -43,8 +43,8 @@ public class TestEngine extends ExcelUtils {
 	public static EventFiringWebDriver Driver = null;
 	public String browser = null;
 	public String baseUrl = null;
-	public ExtentReports extent;
-	public static ExtentTest logger;
+	public static ExtentReports extent;
+	public static  ExtentTest logger;
 	DesiredCapabilities capabilities;
 	public String tcId;
 	public String htmlFile = "index.html";
@@ -125,7 +125,6 @@ public class TestEngine extends ExcelUtils {
 
 		}
 		extent.close();
-		WebDriver.quit();
 	}
 
 	/**
@@ -172,10 +171,6 @@ public class TestEngine extends ExcelUtils {
 	public String capture(WebDriver driver, String screenShotName)
 			throws IOException {
 		
-		if(driver == null)
-		{
-			driver = this.WebDriver;
-		}
 		String ss = String.format(getCurrentTimeStamp(), screenShotName)
 				+ ".png";
 		TakesScreenshot ts = (TakesScreenshot) driver;

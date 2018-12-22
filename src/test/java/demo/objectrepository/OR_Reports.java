@@ -11,7 +11,7 @@ public interface OR_Reports {
 	 String Reports_projectByVP_dropDown="xpath=//div[@id='views_chosen']/a";
 	 String Reports_projectByVP_dropDownMenuList="xpath=//ul[@class='chosen-results']/li";
 	 String Reports_projectByVP_dropDownOption="xpath=//ul[@class='chosen-results']/li[3]";
-	 
+		String Positive_Negative = "xpath=//div[@class='container-fluid']";
 
 		String projects_table_magnifyingSymbol="xpath=//a[starts-with(@href,'/project/view/project_id')]";
 	   
@@ -239,6 +239,7 @@ public interface OR_Reports {
  	    String Report_Tickets_ticketByAgent="xpath=//a[@href='/ticket/reportByAgent/']";
  	    String Report_Tickets_ticketsPastSLA="xpath=//a[@href='/ticket/reportByLastUpdate/']";
  	    String Report_Tickets_ticketQueueGroups="xpath=//a[@href='/ticket/listQueueGroups/']";
+ 	   String Reports_Sales_Salesbtrep = "id=month";
  	    
  	    
 

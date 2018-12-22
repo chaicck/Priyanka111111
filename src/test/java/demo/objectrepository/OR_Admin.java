@@ -324,6 +324,44 @@ String admin_nexmo_managePremier_export="id=export-link";
 	String Bulkcircuitprocessheader = "xpath=//label[text()='THIS ONLY UPDATES MONITORING!']";
 	String Bulkcircuite_process = "xpath=(//input[@name='process'])[2]";
 	
+	String admin_serviceDelivery_manageWorkQueues_groups="xpath=//table[@class='table table-responsive']/tbody/tr/td/div/input";
+	String admin_serviceDelivery_manageWorkQueues_saveBtn="xpath=(//button[@type='submit'])[2]";
+	String admin_serviceDelivery_manageWorkQueues_successMessage="xpath=//div[@class='alert alert-success alert-dismissable']";
+
+	String admin_serviceDelivery_editSystemTasks_addNewTask="xpath=//a[@href='/serviceDelivery/listSystemTasks/']";
+	String admin_serviceDelivery_editSystemTasks_addNewTask_taskName="id=Task_Name";
+	String admin_serviceDelivery_editSystemTasks_saveBtn="xpath=//button[@class='btn btn-primary pull-right btn-sm']";
+	String admin_serviceDelivery_editSystemTasks_taskInfo="xpath=//*[@id='panelTaskInfo']/div[1]/div/a";
+	String admin_serviceDelivery_editSystemTasks_taskInfo_taskStatus_DD="id=Status";
+	String admin_serviceDelivery_editSystemTasks_taskInfo_owner_DD="id=Owner";
+	String admin_serviceDelivery_editSystemTasks_taskInfo_Que_DD="id=Que";
+	
+	String admin_serviceDelivery_ManageProjectTypes_projectType="id=type_name";
+	String admin_serviceDelivery_ManageProjectTypes_editBtn="xpath=//table[@class='table table-condensed']/tbody/tr/td[3]/div/button[1]";
+	String admin_serviceDelivery_ManageProjectTypes_projectType_parametarised="xpath=(//input[@id='type_name'])[%s]";
+	String admin_serviceDelivery_ManageProjectTypes_edit_parametarised="xpath=(//button[@value='edit'])[%s]";
+	String admin_serviceDelivery_ManageProjectTypes_delete_parametarised="xpath=(//button[@value='delete'])[%s]";
+	String admin_serviceDelivery_ManageProjectTypes_add="xpath=(//button[@value='add'])";
+	String admin_serviceDelivery_EditProjectTemplete_add="xpath=//a[@href='/serviceDelivery/projectTemplate']";
+	String admin_serviceDelivery_EditProjectTemplete_add_name="id=Name";
+	String admin_serviceDelivery_EditProjectTemplete_add_Description="id=Description";
+	String admin_serviceDelivery_EditProjectTemplete_add_create="xpath=(//button[@type='submit'])[2]";
+	String admin_serviceDelivery_EditProjectTemplete_search="xpath=//input[@type='search']";
+	String admin_serviceDelivery_EditProjectTemplete_table_names="xpath=//*[@id='DataTables_Table_0']/tbody/tr/td[2]";
+	String admin_serviceDelivery_EditProjectTemplete_table_magnifier_parametarised="xpath=//*[@id='DataTables_Table_0']/tbody/tr[%s]/td/a";
+	String admin_serviceDelivery_EditProjectTemplete_add_delete="id=delete-template";
+	
+	String dashboard_addProject="xpath=//a[starts-with(@href,'/project/create/customer_id')]";
+	String dashboard_addProject_projectId="id=project_id";
+	String dashboard_addProject_dueDate="id=due_date";
+	String dashboard_addProject_projectManager_DD="id=project_manager";
+	String dashboard_addProject_dueDate_dueDateReasonChange_DD="id=duedate_reason_code_id";
+	String dashboard_addProject_dueDate_dueDateChangeNotes="id=duedate_change_note";
+	String dashboard_addProject_dueDate_dueDateChangeNote_saveBtn="xpath=(//button[@type='submit'])[2]";   	
+	String projectManager_search1="xpath=(//div[@class='chosen-search']/input)[2]";   	
+	String dashboard_addProject_projectManager="id=project_manager_chosen"; 
+	
 
 
 }
+

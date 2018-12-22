@@ -11,4 +11,5 @@ public interface OR_CustomerMenu_topRight {
     String menu_notification_status="id=notification-status";
     String menu_notification_downloads="id=notification-downloads";
     String menu_notification_loginAs="id=notification-log-in-as";
+    String paneTitle="css=#header_crumbs";
 }

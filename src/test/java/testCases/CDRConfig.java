@@ -43,6 +43,7 @@ public class CDRConfig extends MediatorClass {
 		String customertxt1 = getTestData(this.getClass().getSimpleName().substring(0, 5), 9);
 		String customertxt2 = getTestData(this.getClass().getSimpleName().substring(0, 5), 10);
 
+		// * logger method for report starting from here
 		logger = extent.startTest("CDRConfig").assignCategory("Home","Regression test");
 		logInfo("Currently Running on -- " + getCurrentUrl());
 		logInfo("TestCase Description:In CDRConfig Page Verify On/Off Buttons And Add Link_Manage_SFTP_Credentials Account");
@@ -143,7 +144,7 @@ public class CDRConfig extends MediatorClass {
 		JSClick(prortaluserLink_Manage_SFTP_Credentials_windowclose_X,
 				"Window close");
 		// * Below method written to logout application
-		logOutt();
+		logOut();
 		softassert.assertAll();
 	
 

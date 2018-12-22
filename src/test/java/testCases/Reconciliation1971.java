@@ -75,5 +75,6 @@ public class Reconciliation1971 extends CommonReusables implements OR_HomePage,
 
 		// Below method writtent to do logout from application
 		logOut();
+		softassert.assertAll();
 	}
 }

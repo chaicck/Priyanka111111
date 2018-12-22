@@ -97,16 +97,6 @@ public class ActionEngine extends TestEngine {
 	 */
 	protected WebElement getElement(final String locator) {
 		
-//		WebElement element = null;
-//		try {
-//			element = getElement(locator, true);
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//			logger.log(LogStatus.FAIL, "Unable to find element in page due to exception '" +e); 
-//			Assert.fail("Unable to locate Element due to exception " +e);
-//		}
-//		return element;
-		
 		return getElement(locator, true);
 	}
 
@@ -189,20 +179,6 @@ public class ActionEngine extends TestEngine {
 			e.printStackTrace();
 			
 		}
-		finally{
-		if(flag)
-			{
-				logger.log(LogStatus.PASS, "Successfully clicked  mousehover '"
-						+ text1 + "'"+"and"+" "+text2);
-				System.out.println("Successfully clicked  mousehover to '"
-						+ text1 + "'"+"and clicked"+" "+text2);
-			} else {
-				logger.log(LogStatus.FAIL, "Failed to mousehover '"
-						+ text1 + "'"+"and"+" "+text2);
-				System.out.println("Failed to mousehover '"
-						+ text1 + "'"+"and"+" "+text2);
-			}
-		}
 		
 		return flag;
 
@@ -226,28 +202,18 @@ public class ActionEngine extends TestEngine {
 			ob.build().perform();
 			Thread.sleep(2000);
 			flag = true;
-			flag = true;
+			logger.log(LogStatus.PASS, "Successfully clicked on '"+ elementName + "'");
+			System.out.println("Successfully clicked on '" + elementName+ "'");
 			return flag;
 		}
 
 		catch (Exception e) {
+			logger.log(LogStatus.FAIL, "Failed to click on '" + elementName+ "' Button -> Reason - Element not Present/Clickale" +e);
+			System.out.println("Failed to click on '" + elementName+ "' Button -> Reason - Element not Present/Clickale" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
-			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
 
-		} finally {
-			if (flag) {
-				logger.log(LogStatus.PASS, "Successfully clicked on '"
-						+ elementName + "'");
-				System.out.println("Successfully clicked on '" + elementName
-						+ "'");
-			} else {
-				logger.log(LogStatus.FAIL, "Failed to click on '" + elementName
-						+ "' Button -> Reason - Element not Present/Clickale");
-				System.out.println("Failed to click on '" + elementName
-						+ "' Button -> Reason - Element not Present/Clickale");
-			}
-		}
+		} 
 		return flag;
 	}
 
@@ -262,24 +228,17 @@ public class ActionEngine extends TestEngine {
 			actions.moveToElement(getElement(locator1)).perform();
 			Thread.sleep(1000);
 			flag = true;
+			logger.log(LogStatus.PASS, "Successfully clicked  menu '"+ elementName1 + "'");
+			System.out.println("Successfully clicked  menu '"+ elementName1 + "'");
 
 		} catch (Exception e) {
 			// TODO: handle exception
+			logger.log(LogStatus.FAIL, "Failed to click on   menu '"+ elementName1 + "'" +e);
+			System.out.println("Failed to click on   menu '"+ elementName1 + "'" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
-		} finally {
-			if (flag) {
-				logger.log(LogStatus.PASS, "Successfully clicked  menu '"
-						+ elementName1 + "'");
-				System.out.println("Successfully clicked  menu '"
-						+ elementName1 + "'");
-			} else {
-				logger.log(LogStatus.FAIL, "Failed to click on   menu '"
-						+ elementName1 + "'");
-				System.out.println("Failed to click on   menu '"
-						+ elementName1 + "'");
-			}
+		
 		}
 		return flag;
 
@@ -321,35 +280,21 @@ public class ActionEngine extends TestEngine {
 
 		boolean flag = false;
 		try {
-			if (waitForElementToBeClickable(locator, 60)) {
-
+				waitForElementToBeClickable(locator, 60);
 				WebElement element = getElement(locator);
 				((JavascriptExecutor) Driver).executeScript(
 						"arguments[0].click();", element);
-
+				logger.log(LogStatus.PASS, "Successfully clicked on '"+ elementName + "'");
+				System.out.println("Successfully clicked on '" + elementName+ "'");
 				flag = true;
 				return flag;
-			} else {
-				flag = false;
-				return flag;
-			}
 
 		} catch (Exception e) {
+			logger.log(LogStatus.FAIL, "Failed to click on '" + elementName+ "' Button -> Reason - Element not Present/Clickale" +e);
+			System.out.println("Failed to click on '" + elementName+ "' Button -> Reason - Element not Present/Clickale" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
-			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
-		} finally {
-			if (flag) {
-				logger.log(LogStatus.PASS, "Successfully clicked on '"
-						+ elementName + "'");
-				System.out.println("Successfully clicked on '" + elementName
-						+ "'");
-			} else {
-				logger.log(LogStatus.FAIL, "Failed to click on '" + elementName
-						+ "' Button -> Reason - Element not Present/Clickale");
-				System.out.println("Failed to click on '" + elementName
-						+ "' Button -> Reason - Element not Present/Clickale");
-			}
+		
 		}
 		return flag;
 	}
@@ -525,7 +470,7 @@ public class ActionEngine extends TestEngine {
 					&& !e.getCause().getClass().toString()
 							.contains("NoSuchElementException")) {
 				// takeScreenshot();
-				logger.log(LogStatus.ERROR, e);
+				logger.log(LogStatus.FAIL, e);
 				System.out.println(e);
 			}
 
@@ -609,23 +554,14 @@ public class ActionEngine extends TestEngine {
 		try {
 			we.click();
 			flag = true;
+			logger.log(LogStatus.PASS, "Successfully clicked on -->"+ elementName);
+			System.out.println("Successfully clicked on -->" + elementName);
 			return flag;
 		} catch (Exception e) {
-//			System.out.println("Unable to click element" +e);
-//			Assert.fail("Unable to click element due to " +e);
+			logger.log(LogStatus.FAIL, "Failed to click on -->"+ elementName + "due to exception :" +e);
+			System.out.println("Failed to click on -->" + elementName +"due to exception :" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
-			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
-		} finally {
-			if (flag) {
-				logger.log(LogStatus.PASS, "Successfully clicked on -->"
-						+ elementName);
-				System.out.println("Successfully clicked on -->" + elementName);
-			} else {
-				logger.log(LogStatus.FAIL, "Failed to click on -->"
-						+ elementName);
-				System.out.println("Failed to click on -->" + elementName);
-			}
 		}
 		return flag;
 
@@ -684,31 +620,18 @@ public class ActionEngine extends TestEngine {
 			// ob.click(getElement(locator));
 			ob.build().perform();
 			Thread.sleep(2000);
-			flag = true;
+			logger.log(LogStatus.PASS, "Successfully clicked on '"+ elementName + "'");
+			System.out.println("Successfully clicked on '" + elementName+ "'");
 			flag = true;
 			return flag;
 		}
 
 		catch (Exception e) {
-//			logger.log(LogStatus.ERROR, e);
-//			System.out.println(e);
-			
+			logger.log(LogStatus.FAIL, "Failed to click on '" + elementName+ "'"+" due to exception :" +e);
+			System.out.println("Failed to click on '" + elementName + "'"+" due to exception :" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
-		}
-
-		finally {
-			if (flag) {
-				logger.log(LogStatus.PASS, "Successfully clicked on '"
-						+ elementName + "'");
-				System.out.println("Successfully clicked on '" + elementName
-						+ "'");
-			} else {
-				logger.log(LogStatus.FAIL, "Failed to click on '" + elementName
-						+ "'");
-				System.out.println("Failed to click on '" + elementName + "'");
-			}
 		}
 		return flag;
 	}
@@ -718,9 +641,9 @@ public class ActionEngine extends TestEngine {
 	 */
 	protected boolean actionsClick(String locator, String elementName)
 			throws Throwable {
-		if (waitForElementToBeClickable(locator, 40)) {
 			boolean flag = false;
 			try {
+				waitForElementToBeClickable(locator, 40);
 				Actions ob = new Actions(Driver);
 				waitForElementPresent(locator, 30);
 				ob.moveToElement(getElement(locator));
@@ -735,13 +658,10 @@ public class ActionEngine extends TestEngine {
 				logger.log(LogStatus.FAIL, "Failed to click on -->"+ elementName);
 				logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 				System.out.println("Failed to click on -->" + elementName + "due to exception" +e);
-				throw e;
+				e.printStackTrace();
 
 			}
-		} else {
-			Assert.assertTrue(false, "Unable to locate elemnt '" + locator+ "'");
-			System.out.println("Unable to locate elemnt '" + locator + "'");
-		}
+		
 		return false;
 	}
 
@@ -759,14 +679,14 @@ public class ActionEngine extends TestEngine {
 	protected boolean click(final String locator, String elementName)
 			throws Throwable {
 
-		if (waitForElementToBeClickable(locator, 30)) {
-
 			boolean flag = false;
 			try {
 				waitForElementPresent(locator, 1);
 				WebElement element = getElement(locator);
 				((JavascriptExecutor) Driver).executeScript(
 						"arguments[0].click();", element);
+				logger.log(LogStatus.PASS, "Successfully clicked on -->"+ elementName);
+				System.out.println("Logged into Zeus Successfully");
 				flag = true;
 				return flag;
 			}
@@ -778,39 +698,6 @@ public class ActionEngine extends TestEngine {
 				e.printStackTrace();
 			}
 
-			finally {
-				if (flag) {
-					logger.log(LogStatus.PASS, "Successfully clicked on -->"
-							+ elementName);
-					String searchBox = "id=search";
-					if (locator.contains("button[type='submit']")) {
-						if (waitForElementPresent(searchBox, 20)) {
-							logPass("Logged into Zeus Successfully");
-							System.out.println("Logged into Zeus Successfully");
-						} else {
-							logger.log(LogStatus.PASS,
-									"Zeus login was Un-Successful. Please find the screenshot attached.");
-							System.out
-									.println("Zeus login was Un-Successful. Please find the screenshot attached.");
-//							Assert.assertTrue(false,
-//									"login attmpt into Zeus was unsuccessful.");
-						}
-					}
-				} else {
-					logger.log(LogStatus.FAIL, "Failed to click on -->"
-							+ elementName);
-					System.out.println("Failed to click on -->" + elementName);
-					
-				}
-			}
-		} else {
-//			Assert.assertTrue(false, "Unable to locate elemnt '" + locator
-//					+ "'");
-			logger.log(LogStatus.FAIL, "Unable to locate elemnt '" + locator + "'");
-			System.out.println("Unable to locate elemnt '" + locator + "'");
-			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
-			
-		}
 		return false;
 	}
 
@@ -866,6 +753,8 @@ public class ActionEngine extends TestEngine {
 			List<WebElement> l = getAllElements(locator);
 			for (WebElement object : l) {
 				object.click();
+				logger.log(LogStatus.PASS, "Successfully clicked on -->"+ object);
+				System.out.println("Successfully clicked on -->"+ object);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -889,21 +778,16 @@ public class ActionEngine extends TestEngine {
 				if (object.getText().contains(text))
 				{
 					flag = true;
+					logger.log(LogStatus.PASS, "Verifed text '" + text);
+					System.out.println("Verifed text '" + text);
 				}
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			logger.log(LogStatus.ERROR, e);
-//			System.out.println(e.getMessage());			
+			logger.log(LogStatus.FAIL, "Element is not available on page due to exception" +e);		
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
-		} finally {
-			if (flag) {
-				logger.log(LogStatus.PASS, "Verifed text '" + text);
-			} else {
-				logger.log(LogStatus.FAIL, "Failed to verify text '" + text);
-			}
 
 		}
 		return flag;
@@ -917,15 +801,20 @@ public class ActionEngine extends TestEngine {
 		try {
 			List<WebElement> l = getAllElements(locator);
 			for (WebElement object : l) {
-				if (!object.getText().equalsIgnoreCase(text)
-						|| !object.getText().equalsIgnoreCase(text1))
+				if (!object.getText().equalsIgnoreCase(text)|| !object.getText().equalsIgnoreCase(text1))
+				{
+					
+					logger.log(LogStatus.PASS, "Records found with" + text + " and "+ text1);
+					System.out.println("Records found with" + text + " and " + text1);
 					return false;
+				}
 			}
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "No Records found with" + text + " and "
 					+ text1 + "  " + e);
 			System.out.println("No Records found with" + text + " and " + text1
 					+ "  " + e);
+			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 		}
 		return true;
 	}
@@ -984,8 +873,7 @@ public class ActionEngine extends TestEngine {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			flag = false;
-			logger.log(LogStatus.FAIL, e);
+			logger.log(LogStatus.FAIL, "Element is not available on page due to exception" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
@@ -1053,8 +941,7 @@ public class ActionEngine extends TestEngine {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-//			logger.log(LogStatus.ERROR, e);
-//			System.out.println(e);
+			logger.log(LogStatus.FAIL, "Element is not available on page due to exception" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
@@ -1101,6 +988,7 @@ public class ActionEngine extends TestEngine {
 			// TODO: handle exception
 			logger.log(LogStatus.ERROR, e);
 			System.out.println(e);
+			e.printStackTrace();
 		}
 
 	}
@@ -1128,8 +1016,9 @@ public class ActionEngine extends TestEngine {
 	/**
 	 * This method is used verify the weather given text present in drop down
 	 * values
+	 * @throws IOException 
 	 */
-	public boolean verifyDropDownValue(String locator, String text) {
+	public boolean verifyDropDownValue(String locator, String text) throws Throwable {
 		boolean flag = false;
 		try {
 			Select select = new Select(getElement(locator));
@@ -1139,13 +1028,15 @@ public class ActionEngine extends TestEngine {
 				if (we.getText().contains(text)){
 					flag = true;
 					logger.log(LogStatus.PASS, "Element --> " + text+ " is displayed");
+					System.out.println("Element --> " + text+ " is displayed");
 				}
 			}
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.log(LogStatus.FAIL, "Element --> " + text+ " is not displayed due to excption :" +e);
-			System.out.println(e);
+			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
+			System.out.println("Element --> " + text+ " is not displayed due to excption :" +e);
 		}
 		return flag;
 
@@ -1206,8 +1097,7 @@ public class ActionEngine extends TestEngine {
 			WebElement we = getElement(locatorName);
 			if (we.isDisplayed()){
 				flag = true;
-			logger.log(LogStatus.PASS, "Element --> " + elementName
-					+ " is displayed");
+			logger.log(LogStatus.PASS, "Element --> " + elementName+ " is displayed");
 			System.out.println("Element --> " + elementName + " is displayed");
 			return flag;
 			}
@@ -1392,7 +1282,7 @@ public class ActionEngine extends TestEngine {
 			flag = true;
 		} catch (Exception e) {
 			flag = false;
-			logger.log(LogStatus.ERROR, e);
+			logger.log(LogStatus.ERROR, "Element is not available on page due to exception" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
@@ -1609,7 +1499,7 @@ public class ActionEngine extends TestEngine {
 
 		} catch (Exception e) {
 			// takeScreenshot();
-			logger.log(LogStatus.ERROR, e);
+			logger.log(LogStatus.ERROR, "Element is not available on page due to exception" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
@@ -1657,7 +1547,6 @@ public class ActionEngine extends TestEngine {
 			flag = true;
 		} catch (Exception e) {
 			System.out.println("Drop down selection failed due to exception :" +e);
-//			Assert.fail("Drop down selection failed due to exception :" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
@@ -1678,8 +1567,6 @@ public class ActionEngine extends TestEngine {
 			logger.log(LogStatus.INFO, "Drop down selected option " + option);
 			System.out.println("Drop down selected option " + option);
 		} catch (Exception e) {
-			// takeScreenshot();
-//			Assert.fail("Drop down selection failed due to exception :" +e);
 			logger.log(LogStatus.ERROR, e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
@@ -1716,18 +1603,22 @@ public class ActionEngine extends TestEngine {
 
 	/**
 	 * This method is used to scroll web page to the element
+	 * @throws IOException 
 	 */
-	protected void scrollElementIntoView(String locator) {
+	protected void scrollElementIntoView(String locator) throws IOException {
 		try {
 			((JavascriptExecutor) Driver).executeScript(
 					"arguments[0].scrollIntoView(true);", getElement(locator));
 
+			logger.log(LogStatus.PASS, "Scrolled element to view");
 			System.out.println("Scrolled element to view");
 
 		}
 		catch (Exception e) {
-			System.out.println("Unable perform mouse hover" + e);
-			Assert.fail("Unable perform mouse hover" + e);
+			logger.log(LogStatus.FAIL, "Element is not available on page due to exception" +e);
+			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
+			System.out.println("Element is not available on page due to exception" +e);
+			e.printStackTrace();
 		}
 	}
 
@@ -1738,41 +1629,44 @@ public class ActionEngine extends TestEngine {
 	 */
 	protected void scrollToBottom() throws Exception {
 		try {
-			// ((JavascriptExecutor)
-			// Driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-			// ((JavascriptExecutor)
-			// Driver).executeScript("window.scrollTo(0,Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,document.documentElement.clientHeight))");
-
-			// Actions actions = new Actions(Driver);
-			// actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
 			((JavascriptExecutor) Driver)
 					.executeScript("window.scrollBy(0,1500)");
 			Thread.sleep(3000);
+			logger.log(LogStatus.PASS, "Scrolled to bottom to view element");
+			System.out.println("Scrolled to bottom to view element");
 		}
 
 		catch (Exception e) {
 			System.out.println("Failed to scroll to bottom" + e);
-			Assert.fail("Unable perform mouse hover" + e);
+			logger.log(LogStatus.PASS, "Scrolled to bottom to view element");
+			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
+			e.printStackTrace();
 		}
 	}
 
 	/**
 	 * This method is used to scroll web page to the element
+	 * @throws Throwable 
 	 */
-	protected void scrollElementIntoView(WebElement elementToScroll) {
+	protected void scrollElementIntoView(WebElement elementToScroll) throws Throwable {
 		try {
 			((JavascriptExecutor) Driver).executeScript(
 					"arguments[0].scrollIntoView(true);", elementToScroll);
+			logger.log(LogStatus.PASS, "Scrolled to view element" +elementToScroll);
+			System.out.println("Scrolled to view element" +elementToScroll);
 		} catch (Exception e) {
-			System.out.println("Unable perform mouse hover" + e);
-			Assert.fail("Unable perform mouse hover" + e);
+			System.out.println("Unable perform Scrolling" + e);
+			logger.log(LogStatus.PASS, "Scrolled to bottom to view element");
+			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
+			e.printStackTrace();
 		}
 	}
 
 	/**
 	 * This method is used to click on locator using Java script
+	 * @throws Throwable 
 	 */
-	protected void JSClick(String locator) {
+	protected void JSClick(String locator) throws Throwable {
 
 		try {
 			WebElement element = getElement(locator);
@@ -1782,9 +1676,10 @@ public class ActionEngine extends TestEngine {
 
 		catch (Exception e) {
 
-			logger.log(LogStatus.ERROR, e);
+			logger.log(LogStatus.ERROR, "Unable to click" +e);
 			System.out.println("Unable to click due to" + e);
-//			Assert.fail("Unable to click element" +e);
+			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
+			e.printStackTrace();
 		}
 	}
 
@@ -1798,7 +1693,7 @@ public class ActionEngine extends TestEngine {
 		if (waitForElementToBeClickable(locator, 60)) {
 			
 			try {
-				waitForElementPresent(locator, 1);
+				waitForElementToBeClickable(locator, 60);
 				WebElement element = getElement(locator);
 				((JavascriptExecutor) Driver).executeScript(
 						"arguments[0].click();", element);
@@ -1813,7 +1708,7 @@ public class ActionEngine extends TestEngine {
 				logger.log(LogStatus.FAIL, "Failed to click on -->"+ elementName);
 				logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 				System.out.println("Failed to click on -->" + elementName +" due to exeception "+ e);
-				throw e;
+				e.printStackTrace();
 			}
 
 		} else {
@@ -1922,11 +1817,4 @@ public class ActionEngine extends TestEngine {
 		return result.toString();
 	}
 	
-	/*protected void testclick(String menu, String submenu)
-	{
-		WebDriverWait wait = new WebDriverWait(Driver, 5);
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(selector_For_Element_To_Be_Click_After_Hover)));
-		driver.findElement(By.cssSelector(selector_For_Element_To_Be_Click_After_Hover)).click();
-	}
-*/
 }

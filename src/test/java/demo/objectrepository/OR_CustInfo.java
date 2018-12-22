@@ -234,6 +234,7 @@ public interface OR_CustInfo {
 	String customerHome_email = "xpath=//table[@id='contacts_table']/thead/tr/th[6]";
 	String customerHome_name = "xpath=//table[@id='contacts_table']/thead/tr/th[2]";
 	String customerHome_mobile = "xpath=//table[@id='contacts_table']/thead/tr/th[5]";
+	String customer_dashboard_contacts_ticketIds_parameterised="xpath=//*[@id='ticket_table']/tbody/tr[%s]/td[2]";
 
 	// Test case - Billing-contract
 
@@ -441,4 +442,21 @@ public interface OR_CustInfo {
 	String data_devices_1StMagnifier = "xpath=//*[@id='device_table']/tbody/tr[1]/td[1]/a[1]";
 	String data_devices_1StDeviceId = "xpath=//*[@id='device_table']/tbody/tr[1]/td[2]";
 
+	String voice_broadWorks="id=notification-broadworks";
+	String voice_broadWorks_numberActivation="id=notification-number-activation";
+	String voice_broadWorks_numberActivation_Table_numbers="xpath=//*[@id='numbers_table']/tbody/tr/td[2]";
+	
+	String voine_numbers_AssignNumbersFrmInventoryBtn="xpath=//*[@id='number_table']/caption/a[2]";
+	String voine_numbers_AssignNumbersFrmInventoryBtn_rateCenterName_DD="name=rate_center_name";
+	String voine_numbers_AssignNumbersFrmInventoryBtn_search="xpath=(//button[@type='submit'])[3]";
+	String voine_numbers_AssignNumbersFrmInventoryBtn_search_playBtn="xpath=//a[@class='select_numbers']";
+	String voine_numbers_AssignNumbersFrmInventoryBtn_search_mobileNumber="xpath=//*[@id='number_table']/tbody/tr[1]/td[4]";
+	String voine_numbers_AssignNumbersFrmInventoryBtn_search_playBtn_assign="xpath=//button[text()='Assign Numbers']";
+	String Voice_CDR="id=notification-cdrs";
+	String Voice_CDR_usuageHistory="xpath=//a[starts-with(@href,'/cdr/usageHistory/customer')]";
+	String Voice_CDR_usuageHistory_filter_DD="id=type";
+	String Voice_CDR_usuageHistory_filerBtn="xpath=(//button[@type='submit'])[2]";
+	String Voice_CDR_usuageHistory_tableColumnHeaders="xpath=//*[@id='usage']/thead/tr/th";
 }
+
+
