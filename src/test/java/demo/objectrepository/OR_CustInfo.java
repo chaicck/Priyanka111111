@@ -470,6 +470,8 @@ public interface OR_CustInfo {
 	String Home_data_devices_magnifier_saveBtn="xpath=(//button[@type='submit'])[2]";
 	String Home_data_devices_magnifier_saveBtn_successPopUp="xpath=//button[@class='btn btn-default center-block']";
 	String Home_data_devices_1stDeviceName_table="xpath=//*[@id='device_table']/tbody/tr[1]/td[3]";
+	
+	
 }
 
 

@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -664,6 +665,7 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		try {
 			waitForElementPresent(logoutDd, 20);
 			click(logoutDd, "Logout");
+			Thread.sleep(500);
 			logPass("Successfully clicked on right top Menu");
 			JSClick(logoutBtn);
 			if(readProp("zLogout").trim().contains(getPageTile()))
@@ -768,6 +770,7 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		if(readProp("zTitle").trim().contains(getPageTile()))
 		{
 			logger.log(LogStatus.PASS, "Login Success : Login into Zeus Successefully");
+			System.out.println("Login Success : Login into Zeus Successefully");
 		}
 		else{
 			System.out.println(readProp("zTitle").trim()+""+getPageTile().trim());
@@ -1159,6 +1162,44 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
         waitForElementPresent(textElement, 200);
         return verifyText(textElement,  text, "Verifying HeadLine text");
 	}
+	
+	protected void typeAndVerify10DiscountPrice(String text, int n) throws Throwable{
+    	
+		String customerDashboard_addMAC_productAddNew_productTextBox;
+		String customerDashboard_addMAC_productAddNew_unitPrice;
+		String customerDashboard_addMAC_productAddNew_discountPrice;
+		customerDashboard_addMAC_productAddNew_productTextBox="xpath=//*[@id='ptable']/tbody/tr["+n+"]/td[1]/span/input[2]";
+		customerDashboard_addMAC_productAddNew_unitPrice="xpath=//*[@id='ptable']/tbody/tr["+n+"]/td[6]/input";
+		customerDashboard_addMAC_productAddNew_discountPrice="xpath=//*[@id='ptable']/tbody/tr["+n+"]/td[7]/div/input[1]";
+    	
+		scrollElementIntoView(customerDashboard_addMAC_productAddNew_productTextBox);
+    	Thread.sleep(5000);
+    	clearText(customerDashboard_addMAC_productAddNew_productTextBox);
+    	type(customerDashboard_addMAC_productAddNew_productTextBox, text, "");
+		type(customerDashboard_addMAC_productAddNew_productTextBox, "", Keys.ARROW_DOWN , Keys.ENTER);
+		Thread.sleep(9000);
+		String unitPrice= getAttributeValue(customerDashboard_addMAC_productAddNew_unitPrice, "value");
+		String discountPrice=getAttributeValue(customerDashboard_addMAC_productAddNew_discountPrice, "value");
+		
+		
+		Double result = Double.parseDouble(unitPrice);			
+		System.out.println(result);
+		Double d= (result/100)*10;
+		double discountPriceAmount=result-d;
+		
+		DecimalFormat df = new DecimalFormat("#.##");
+		System.out.println(df.format(discountPriceAmount));
+		String discountPriceamt =df.format(discountPriceAmount);
+		
+		System.out.println("unit"+unitPrice);
+		System.out.println("discount"+discountPrice);
+		System.out.println("discount"+d);
+		System.out.println("converted"+discountPriceamt);
+		
+        //System.out.println(df.format(Double.toString(discountPriceAmount)));
+		Assert.assertTrue(discountPrice.contains(discountPriceamt));
+		logPass("Verified "+discountPrice+ "is matching after converting price to " +discountPriceamt);
+    }
 	
 	
 	

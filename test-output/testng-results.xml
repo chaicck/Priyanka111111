@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="95787" started-at="2018-12-23T06:45:54Z" finished-at="2018-12-23T06:47:29Z">
+  <suite name="Suite" duration-ms="96723" started-at="2018-12-23T11:26:03Z" finished-at="2018-12-23T11:27:40Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="95787" started-at="2018-12-23T06:45:54Z" finished-at="2018-12-23T06:47:29Z">
-      <class name="testCases.TC_1_6_Dashboard_Edit_Device_Status">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="beforeSuite" is-config="true" duration-ms="152" started-at="2018-12-23T06:45:53Z" finished-at="2018-12-23T06:45:54Z">
+    <test name="Test" duration-ms="96723" started-at="2018-12-23T11:26:03Z" finished-at="2018-12-23T11:27:40Z">
+      <class name="testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="beforeSuite" is-config="true" duration-ms="136" started-at="2018-12-23T11:26:03Z" finished-at="2018-12-23T11:26:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="beforeMethod" is-config="true" duration-ms="10867" started-at="2018-12-23T06:45:54Z" finished-at="2018-12-23T06:46:04Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="beforeMethod" is-config="true" duration-ms="12000" started-at="2018-12-23T11:26:03Z" finished-at="2018-12-23T11:26:15Z">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tC_1_6_Dashboard_Edit_Device_Status(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="tC_1_6_Dashboard_Edit_Device_Status" duration-ms="84400" started-at="2018-12-23T06:46:04Z" finished-at="2018-12-23T06:47:29Z">
+        <test-method status="PASS" signature="tC_1_80_Verify2NewGroupsUnderGroups_TicketPage(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="tC_1_80_Verify2NewGroupsUnderGroups_TicketPage" duration-ms="84124" started-at="2018-12-23T11:26:15Z" finished-at="2018-12-23T11:27:39Z">
           <params>
             <param index="0">
               <value>
@@ -37,23 +37,23 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tC_1_6_Dashboard_Edit_Device_Status -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="afterMethod" is-config="true" duration-ms="499" started-at="2018-12-23T06:47:29Z" finished-at="2018-12-23T06:47:29Z">
+        </test-method> <!-- tC_1_80_Verify2NewGroupsUnderGroups_TicketPage -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="afterMethod" is-config="true" duration-ms="574" started-at="2018-12-23T11:27:39Z" finished-at="2018-12-23T11:27:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tC_1_6_Dashboard_Edit_Device_Status status=SUCCESS method=TC_1_6_Dashboard_Edit_Device_Status.tC_1_6_Dashboard_Edit_Device_Status(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6] output={null}]]]>
+                <![CDATA[[TestResult name=tC_1_80_Verify2NewGroupsUnderGroups_TicketPage status=SUCCESS method=TC_1_80_Verify2NewGroupsUnderGroups_TicketPage.tC_1_80_Verify2NewGroupsUnderGroups_TicketPage(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="afterSuite" is-config="true" duration-ms="107" started-at="2018-12-23T06:47:29Z" finished-at="2018-12-23T06:47:29Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="afterSuite" is-config="true" duration-ms="77" started-at="2018-12-23T11:27:40Z" finished-at="2018-12-23T11:27:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- testCases.TC_1_6_Dashboard_Edit_Device_Status -->
+      </class> <!-- testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

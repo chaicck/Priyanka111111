@@ -318,6 +318,8 @@ public class ActionEngine extends TestEngine {
 			logger.log(LogStatus.FAIL, "Element is not loading on page due to exception" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
+			throw e;
+			
 		}
 
 		return flag;
@@ -686,7 +688,7 @@ public class ActionEngine extends TestEngine {
 				((JavascriptExecutor) Driver).executeScript(
 						"arguments[0].click();", element);
 				logger.log(LogStatus.PASS, "Successfully clicked on -->"+ elementName);
-				System.out.println("Logged into Zeus Successfully");
+				System.out.println("Successfully clicked on -->"+ elementName);
 				flag = true;
 				return flag;
 			}
@@ -716,8 +718,8 @@ public class ActionEngine extends TestEngine {
 			if(expectedTxt.contains(text))
 			{
 				flag = true;
-				logger.log(LogStatus.PASS, "Verified Expected text on webpage i.e. '" + text + "'");
-				System.out.println("Verified Expected text on webpage i.e. '" + text + "'");
+				logger.log(LogStatus.PASS, "Verified Expected text on webpage i.e. '" + text + "'" +"is matching");
+				System.out.println("Verified Expected text on webpage i.e. '" + text + "'" +"is matching");
 			}else
 			{
 				logger.log(LogStatus.FAIL, "Expected text '" + text + "' is not matching ");
@@ -866,6 +868,7 @@ public class ActionEngine extends TestEngine {
 					String locator3 = String.format(locator2, (i + 1));
 					// scrollElementIntoView(locator3);
 					getElement(locator3).click();
+					logger.log(LogStatus.PASS,"Verified the text present in one column of the table "+text+ " and clicke ");
 					flag = true;
 					break;
 				}
@@ -878,18 +881,9 @@ public class ActionEngine extends TestEngine {
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
 		} finally {
-			if (flag) {
-				logger.log(
-						LogStatus.PASS,
-						"Verified the text present in one column of the table and click on other column data(of same row) if match founds");
-				System.out.println();
-
-			} else {
-				logger.log(
-						LogStatus.FAIL,
-						"Failed to verify text present in one column of the table and click on other column data(of same row)");
-				System.out
-						.println("Failed to verify text present in one column of the table and click on other column data(of same row)");
+			if (!flag) {
+				logger.log(LogStatus.FAIL,"Failed to verify text present in one column of the table and click on other column data(of same row)");
+				System.out.println("Failed to verify text present in one column of the table and click on other column data(of same row)");
 			}
 		}
 		return flag;

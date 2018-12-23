@@ -21,9 +21,9 @@ public interface OR_Queues {
     String Queues ="xpath=//span[text()='Queues']";
 	 String Queues_enganeering_ICB = "id=notification-engineering-icb";
 	 String Queues_enganeering_ICB_search ="xpath=//input[@class='form-control input-sm']";
-	 String Queues_enganeering_ICB_search_servicedeliver_aprproved ="xpath=//td[text()='service-delivery-approved'])[1]";
+	 String Queues_enganeering_ICB_search_servicedeliver_aprproved ="xpath=//td[text()='service-delivery-approved'][1]";
 	 String Queues_enganeering_ICB_search_inactive ="xpath=//a[@href='/eicb/queue/active:0']";
-	 String Queues_enganeering_ICB_search_inactive_rejected ="xpath=//td[text()='rejected'])[1]"; 
+	 String Queues_enganeering_ICB_search_inactive_rejected ="xpath=//td[text()='rejected'][1]"; 
 	 String Queues_enganeering_ICB_search_inactive_result ="id=queue_info";
 	 
 

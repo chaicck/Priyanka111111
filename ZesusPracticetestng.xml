@@ -25,9 +25,9 @@
 	<!-- <class name="testCases.PaymentsInvoiceVerification" /> -->
 	
 	<!-- <class name="testCases.TC_1_52_DIDs_Displayed_Number_Activation" />  -->
-	<!-- <class name="testCases.TC_1_53_VIPCustomer_Filter_VIP_Types" /> -->
-<!-- 	<class name="testCases.TC_1_56_TicketMergeVerification" /> -->
-	<class name="testCases.TC_1_6_Dashboard_Edit_Device_Status" /> 
+<!-- 	<class name="testCases.TC_1_67_VerifyNewInterfacecreatedForPlatformConfigured" />
+	<class name="testCases.TC_1_77_EICB_Queue" /> -->
+	<class name="testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage" /> 
 
   
     </classes>

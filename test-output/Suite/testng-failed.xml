@@ -5,15 +5,24 @@
     <parameter name="baseUrl" value="https://zeus.qa5.vonagenetworks.net"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC_1_6_Dashboard_Edit_Device_Status">
+      <class name="testCases.TC_1_67_VerifyNewInterfacecreatedForPlatformConfigured">
         <methods>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
+          <include name="tc_1_67_VerifyNewInterfacecreatedForPlatformConfigured" invocation-numbers="0"/>
           <include name="afterMethod"/>
-          <include name="tC_1_6_Dashboard_Edit_Device_Status" invocation-numbers="0"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- testCases.TC_1_6_Dashboard_Edit_Device_Status -->
+      </class> <!-- testCases.TC_1_67_VerifyNewInterfacecreatedForPlatformConfigured -->
+      <class name="testCases.TC_1_77_EICB_Queue">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="tc_1_77_eICB_Queue" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testCases.TC_1_77_EICB_Queue -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
