@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DemoFramework" verbose="10">
+	<test name="DemoTest">
+		<parameter name="baseUrl" value="https://zeus.qa5.vonagenetworks.net"/>
+		<parameter name="browser" value="chrome" />
+		
+			  	<!-- 
+ <class name="testCases.CDRConfig"/>
+        <class name="testCases.ProjectManager_EditSave"/>
+	<class name="testCases.TC_1_83_Admin_Carriers"/>
+         <class name="testCases.Circuit"/> 
+	
+                <class name="testCases.Device"/>
+	-->
+		<classes>
+	
+
+		 	
+                <class name="testCases.Device"/>
+		 <class name="testCases.Circuit"/> 	
+			 
+		    	
+		</classes>
+	</test>
+</suite>

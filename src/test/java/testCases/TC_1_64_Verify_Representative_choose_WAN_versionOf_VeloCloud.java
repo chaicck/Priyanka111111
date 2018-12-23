@@ -6,27 +6,50 @@ import java.io.File;
 
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
+import utils.AssertSoftly;
 import demo.businesslogic.MediatorClass;
 
 public class TC_1_64_Verify_Representative_choose_WAN_versionOf_VeloCloud extends MediatorClass {
-	  
-	 @Test(alwaysRun=true,enabled=true, dataProvider = "Authentication")
-	public void tC_1_64_Test_Whether_care_representative_is_able_to_choose_SmartWAN_version_Of_VeloCloud_devices(String zUserName, String zPassword)
+	/**
+	 * @author ${Priyanka}
+	 *
+	 * @Test Case name ${CDRConfig}
+	 * @Date ${}
+	 * @Modified ${12/08/2018}
+	 */
+	/**
+	 * TestCase Description:In CDRConfig Page Verify On/Off Buttons And Add
+	 * Link_Manage_SFTP_Credentials Account
+	 */
+	 @Test(alwaysRun=true,enabled=true)
+	public void tC_1_64_Test_Whether_care_representative_is_able_to_choose_SmartWAN_version_Of_VeloCloud_devices(ITestContext context)
 			throws Throwable {
-		 String id=getTestData(this.getClass().getSimpleName().substring(0, 5),1);
+		 
+		// * Below variables written to get input data from excel sheet-Testdata.xlsx and and configuration file - LoginCredentails.properties
+			boolean isassert;
+			String[] loginDetails;
+			loginDetails = getCredentails(context);
+			AssertSoftly softassert = new AssertSoftly();
+			String zUserName = loginDetails[0];
+			String zPassword = loginDetails[1];
+			String customer_id = getTestData(this.getClass().getSimpleName().substring(0, 5), 1);
+			String deviceName = null;
+			String ipAddress = null;
+
+		// * logger method for report starting from here
 		logger = extent.startTest("1.64 Test ID : 18919 - Test whether care representative is able to choose Smart WAN version of VeloCloud devices").assignCategory("Device");
 		logInfo("Currently Running on -- "+getCurrentUrl());
 		logInfo("TestCase Description:Add Device under the Data-Device,Ensure the device type you select"
 		 		+ " is from the VeloCloud and Check if user is able to choose SmartWAN version i.e. vco8-usca1.velocloud.net or "
 		 		+ "vco15-usca1.velocloud.net and click on Add");
-	    type(userNameTxt, zUserName, "User name");
-		type(passTxt, zPassword, "Password");
-		click(submitBtn, "Submit button");
-		logInfo("Logged into Zeus successfully");
+		
+		// * Below Code written to verify login
+		login(zUserName, zPassword);
         waitForElementPresent(searchTextBox, 300);
-		type(searchTextBox, id, "Search Box");
+		type(searchTextBox, customer_id, "Search Box");
 		type(searchTextBox, "search box", Keys.ENTER);
 
 		// locators from OR_Customer Info
@@ -38,8 +61,8 @@ public class TC_1_64_Verify_Representative_choose_WAN_versionOf_VeloCloud extend
 	    waitForElementPresent(Home_data_devices_addDevice, 300);
 		JSClick(Home_data_devices_addDevice, "Add device");
 
-		String deviceName = "gw1.adji.oak" + getRandomString(3);
-		String ipAddress = "10.252.3." + getRandomInt(2);
+		deviceName = "gw1.adji.oak" + getRandomString(3);
+		ipAddress = "10.252.3." + getRandomInt(2);
 		waitForElementPresent(addDevice_deviceName, 300);
 		type(addDevice_deviceName, deviceName, "Device Name");
 		type(addDevice_ipAddress, ipAddress, "Device IP address");
@@ -89,7 +112,7 @@ public class TC_1_64_Verify_Representative_choose_WAN_versionOf_VeloCloud extend
         waitForElementPresent(addDevice_SmartWAN_Versions_DD, 300);
 		actionsClick(addDevice_SmartWAN_Versions_DD, "SmartWAN_Versions DropDown");
 		logInfo("Verifying SmartWAN_Versions Drop down options");
-		Assert.assertTrue(!getText(addDevice_SmartWAN_Versions_DD).equalsIgnoreCase(""));
+		softassert.assertTrue(!getText(addDevice_SmartWAN_Versions_DD).equalsIgnoreCase(""));
 		logPass("selected value under SmartWAN_Versions DropDown is " + getText(addDevice_SmartWAN_Versions_DD)
 		+ " when VeloCloud family selected in DeviceType DropDown");
 		waitForElementPresent(addDevice_add, 300);
@@ -97,7 +120,10 @@ public class TC_1_64_Verify_Representative_choose_WAN_versionOf_VeloCloud extend
 		if (verifyElementText(addDevice_Modify_SuccessMsg_OK_Btn, "OK")) {
 			actionsClick(addDevice_Modify_SuccessMsg_OK_Btn);
 		}
-		logOut();	
+		
+		// * Below method written to logout application
+		logOut();
+		softassert.assertAll();		
 		
 	}
 }

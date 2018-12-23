@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="64599" started-at="2018-12-21T04:35:20Z" finished-at="2018-12-21T04:36:24Z">
+  <suite name="Suite" duration-ms="95787" started-at="2018-12-23T06:45:54Z" finished-at="2018-12-23T06:47:29Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="64599" started-at="2018-12-21T04:35:20Z" finished-at="2018-12-21T04:36:24Z">
-      <class name="testCases.VerifyAccountsIfActive">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.VerifyAccountsIfActive@32709393]" name="beforeSuite" is-config="true" duration-ms="146" started-at="2018-12-21T04:35:20Z" finished-at="2018-12-21T04:35:20Z">
+    <test name="Test" duration-ms="95787" started-at="2018-12-23T06:45:54Z" finished-at="2018-12-23T06:47:29Z">
+      <class name="testCases.TC_1_6_Dashboard_Edit_Device_Status">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="beforeSuite" is-config="true" duration-ms="152" started-at="2018-12-23T06:45:53Z" finished-at="2018-12-23T06:45:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.VerifyAccountsIfActive@32709393]" name="beforeMethod" is-config="true" duration-ms="10267" started-at="2018-12-21T04:35:20Z" finished-at="2018-12-21T04:35:30Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="beforeMethod" is-config="true" duration-ms="10867" started-at="2018-12-23T06:45:54Z" finished-at="2018-12-23T06:46:04Z">
           <params>
             <param index="0">
               <value>
@@ -27,33 +27,33 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyAccountsIfActive(org.testng.ITestContext)[pri:0, instance:testCases.VerifyAccountsIfActive@32709393]" name="verifyAccountsIfActive" duration-ms="53700" started-at="2018-12-21T04:35:30Z" finished-at="2018-12-21T04:36:24Z">
+        <test-method status="PASS" signature="tC_1_6_Dashboard_Edit_Device_Status(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="tC_1_6_Dashboard_Edit_Device_Status" duration-ms="84400" started-at="2018-12-23T06:46:04Z" finished-at="2018-12-23T06:47:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7fc4780b]]>
+                <![CDATA[org.testng.TestRunner@11d8ae8b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAccountsIfActive -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.VerifyAccountsIfActive@32709393]" name="afterMethod" is-config="true" duration-ms="596" started-at="2018-12-21T04:36:24Z" finished-at="2018-12-21T04:36:24Z">
+        </test-method> <!-- tC_1_6_Dashboard_Edit_Device_Status -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="afterMethod" is-config="true" duration-ms="499" started-at="2018-12-23T06:47:29Z" finished-at="2018-12-23T06:47:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyAccountsIfActive status=SUCCESS method=VerifyAccountsIfActive.verifyAccountsIfActive(org.testng.ITestContext)[pri:0, instance:testCases.VerifyAccountsIfActive@32709393] output={null}]]]>
+                <![CDATA[[TestResult name=tC_1_6_Dashboard_Edit_Device_Status status=SUCCESS method=TC_1_6_Dashboard_Edit_Device_Status.tC_1_6_Dashboard_Edit_Device_Status(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.VerifyAccountsIfActive@32709393]" name="afterSuite" is-config="true" duration-ms="811" started-at="2018-12-21T04:36:25Z" finished-at="2018-12-21T04:36:25Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC_1_6_Dashboard_Edit_Device_Status@6ebc05a6]" name="afterSuite" is-config="true" duration-ms="107" started-at="2018-12-23T06:47:29Z" finished-at="2018-12-23T06:47:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- testCases.VerifyAccountsIfActive -->
+      </class> <!-- testCases.TC_1_6_Dashboard_Edit_Device_Status -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

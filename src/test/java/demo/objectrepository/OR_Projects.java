@@ -5,7 +5,7 @@ public interface OR_Projects {
 	
 	    
 	    String projectEdit_duration="xpath=//input[@type='number']";
-	    String projectEdit_saveTaskBtn="xpath=//button[@name='submit']";
+	    String projectEdit_saveTaskBtn="xpath=//*[@id='btn-save-edit']";
 	    String projectEdit_closeBtn="xpath=//button[@class='close']";
 	    
 	   

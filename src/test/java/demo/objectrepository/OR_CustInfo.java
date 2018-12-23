@@ -457,6 +457,19 @@ public interface OR_CustInfo {
 	String Voice_CDR_usuageHistory_filter_DD="id=type";
 	String Voice_CDR_usuageHistory_filerBtn="xpath=(//button[@type='submit'])[2]";
 	String Voice_CDR_usuageHistory_tableColumnHeaders="xpath=//*[@id='usage']/thead/tr/th";
+	
+	String customer_dashBoard_device_status="xpath=//label[@for='monitoring_status']";
+	String customer_dashBoard_device_status_btn="xpath=//a[@id='monitoring_status']";
+	String customer_dashBoard_device_status_btn_info="xpath=//h3[@class='modal-title center']";  //Monitoring Status
+	String customer_dashBoard_device_status_btn_info_closeBtn="xpath=//button[@class='close']";
+	String Home_data_devices_magnifier="xpath=//a[starts-with(@href,'/device/view/device_id')]";
+	
+	String Home_data_devices_magnifier_snmp="xpath=//label[@for='device_snmp_id']";
+	String Home_data_devices_magnifier_snmp_DD="id=device_snmp_id";
+	String Home_data_devices_magnifier_deviceName="id=device_name";
+	String Home_data_devices_magnifier_saveBtn="xpath=(//button[@type='submit'])[2]";
+	String Home_data_devices_magnifier_saveBtn_successPopUp="xpath=//button[@class='btn btn-default center-block']";
+	String Home_data_devices_1stDeviceName_table="xpath=//*[@id='device_table']/tbody/tr[1]/td[3]";
 }
 
 

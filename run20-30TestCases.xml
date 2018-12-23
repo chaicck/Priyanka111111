@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DemoFramework">
+	<test name="DemoTest">
+		<parameter name="baseUrl" value="https://zeus.qa5.vonagenetworks.net"/>
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<!--
+		
+		 <class name="testCases.TC_1_70_Admin_Recon_Mac_Mapping"/>	
+		  <class name="testCases.TC_1_76_EMAC_price_algorithm"/>
+		  <class name="testCases.TC_1_77_EICB_Queue"/>
+		  <class name="testCases.TC_1_79_Bulk_Edit"/>
+		  <class name="testCases.TC_1_82_Verify_International_DIDs_under_Reports"/>			
+		 <class name="testCases.TC_1_84_Admin_SalesTool_EnganeeringICB"/>	 
+		  <class name="testCases.TC_1_87_HyperLinks_Log_0n_MAC_Inventory"/>
+		 <class name="testCases.TC_1_89__Add_MAC"/>
+		 <class name="testCases.TC_1_90_OReilly_Rapid_List"/>
+		 <class name="testCases.TC_1_91_CancelReason_CBBReport"/>
+                 <class name="testCases.Device"/>
+**	  
+		  -->
+		
+		
+			 <class name="testCases.Ticket"/>
+		  	<class name="testCases.TC_1_82_Verify_International_DIDs_under_Reports"/>			
+		  <class name="testCases.TC_1_84_Admin_SalesTool_EnganeeringICB"/>	 
+		  <class name="testCases.TC_1_87_HyperLinks_Log_0n_MAC_Inventory"/>
+		  <class name="testCases.TC_1_89__Add_MAC"/>
+		  <class name="testCases.TC_1_90_OReilly_Rapid_List"/>
+		  <class name="testCases.TC_1_91_CancelReason_CBBReport"/>	
+		  <class name="testCases.TC_1_70_Admin_Recon_Mac_Mapping"/>	
+		  <class name="testCases.TC_1_76_EMAC_price_algorithm"/>
+		  <class name="testCases.TC_1_77_EICB_Queue"/>
+		  <class name="testCases.TC_1_79_Bulk_Edit"/>
+		  <class name="testCases.TC_1_92_Task_Calendar"/>
+		  <class name="testCases.TC_1_93_Export_Task"/>	   
+		  <class name="testCases.TC_1_95_Tasks_Calendar_Page"/>
+		  <class name="testCases.TC_1_96_VerifyReconExceptionAgingGraph"/>
+	          <class name="testCases.VerifyParentCustomerHome"/>
+		  <class name="testCases.TC_1_18_MacProject"/>	
+		  <class name="testCases.ProjectsDropDown"/>
+		  <class name="testCases.TC_1_64_Verify_Representative_choose_WAN_versionOf_VeloCloud"/>
+		<class name="testCases.TC_1_66_Fax_back_Management"/>
+		<class name="testCases.TC_1_67_VerifyNewInterfacecreatedForPlatformConfigured"/>
+		<class name="testCases.TC_1_7_CustomerVoiceInterNationalDIDs"/>
+		</classes>
+	</test>
+</suite>

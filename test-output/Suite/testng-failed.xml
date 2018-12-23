@@ -5,15 +5,15 @@
     <parameter name="baseUrl" value="https://zeus.qa5.vonagenetworks.net"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.VerifyAccountsIfActive">
+      <class name="testCases.TC_1_6_Dashboard_Edit_Device_Status">
         <methods>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
-          <include name="verifyAccountsIfActive" invocation-numbers="0"/>
           <include name="afterMethod"/>
+          <include name="tC_1_6_Dashboard_Edit_Device_Status" invocation-numbers="0"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- testCases.VerifyAccountsIfActive -->
+      </class> <!-- testCases.TC_1_6_Dashboard_Edit_Device_Status -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
