@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="96723" started-at="2018-12-23T11:26:03Z" finished-at="2018-12-23T11:27:40Z">
+  <suite name="Suite" duration-ms="19716" started-at="2018-12-24T12:30:39Z" finished-at="2018-12-24T12:30:59Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="96723" started-at="2018-12-23T11:26:03Z" finished-at="2018-12-23T11:27:40Z">
-      <class name="testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="beforeSuite" is-config="true" duration-ms="136" started-at="2018-12-23T11:26:03Z" finished-at="2018-12-23T11:26:03Z">
+    <test name="Test" duration-ms="19716" started-at="2018-12-24T12:30:39Z" finished-at="2018-12-24T12:30:59Z">
+      <class name="testCases.TC_1_96_VerifyReconExceptionAgingGraph">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC_1_96_VerifyReconExceptionAgingGraph@5ae63ade]" name="beforeSuite" is-config="true" duration-ms="156" started-at="2018-12-24T12:30:39Z" finished-at="2018-12-24T12:30:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="beforeMethod" is-config="true" duration-ms="12000" started-at="2018-12-23T11:26:03Z" finished-at="2018-12-23T11:26:15Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_96_VerifyReconExceptionAgingGraph@5ae63ade]" name="beforeMethod" is-config="true" duration-ms="10004" started-at="2018-12-24T12:30:39Z" finished-at="2018-12-24T12:30:49Z">
           <params>
             <param index="0">
               <value>
@@ -27,33 +27,33 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tC_1_80_Verify2NewGroupsUnderGroups_TicketPage(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="tC_1_80_Verify2NewGroupsUnderGroups_TicketPage" duration-ms="84124" started-at="2018-12-23T11:26:15Z" finished-at="2018-12-23T11:27:39Z">
+        <test-method status="PASS" signature="verifyReconExceptionAgingGraphn(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_96_VerifyReconExceptionAgingGraph@5ae63ade]" name="verifyReconExceptionAgingGraphn" duration-ms="9108" started-at="2018-12-24T12:30:49Z" finished-at="2018-12-24T12:30:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@11d8ae8b]]>
+                <![CDATA[org.testng.TestRunner@50313382]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tC_1_80_Verify2NewGroupsUnderGroups_TicketPage -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="afterMethod" is-config="true" duration-ms="574" started-at="2018-12-23T11:27:39Z" finished-at="2018-12-23T11:27:40Z">
+        </test-method> <!-- verifyReconExceptionAgingGraphn -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_96_VerifyReconExceptionAgingGraph@5ae63ade]" name="afterMethod" is-config="true" duration-ms="584" started-at="2018-12-24T12:30:58Z" finished-at="2018-12-24T12:30:59Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tC_1_80_Verify2NewGroupsUnderGroups_TicketPage status=SUCCESS method=TC_1_80_Verify2NewGroupsUnderGroups_TicketPage.tC_1_80_Verify2NewGroupsUnderGroups_TicketPage(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6] output={null}]]]>
+                <![CDATA[[TestResult name=verifyReconExceptionAgingGraphn status=SUCCESS method=TC_1_96_VerifyReconExceptionAgingGraph.verifyReconExceptionAgingGraphn(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_96_VerifyReconExceptionAgingGraph@5ae63ade] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@6ebc05a6]" name="afterSuite" is-config="true" duration-ms="77" started-at="2018-12-23T11:27:40Z" finished-at="2018-12-23T11:27:40Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC_1_96_VerifyReconExceptionAgingGraph@5ae63ade]" name="afterSuite" is-config="true" duration-ms="63" started-at="2018-12-24T12:30:59Z" finished-at="2018-12-24T12:30:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage -->
+      </class> <!-- testCases.TC_1_96_VerifyReconExceptionAgingGraph -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

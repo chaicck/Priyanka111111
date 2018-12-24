@@ -119,11 +119,10 @@ public class TC_1_64_Verify_Representative_choose_WAN_versionOf_VeloCloud
 		logInfo("Verifying SmartWAN_Versions Drop down options");
 		
 		softassert.assertTrue(verifyTextPresentInList(addDevice_SmartWAN_Versions_DD_options, "---None---"));
-		logPass("---None--- opetion present under SmartWAN_Versions DropDown when other than VeloCloud family selected in DeviceType DropDown");
+		logPass("---None--- option present under SmartWAN_Versions DropDown when other than VeloCloud family selected in DeviceType DropDown");
 		Thread.sleep(8000);
 		waitForElementPresent(addDevice_SmartWAN_Versions_DD, 300);
-		actionsClick(addDevice_SmartWAN_Versions_DD,
-				"SmartWAN_Versions DropDown");
+		actionsClick(addDevice_SmartWAN_Versions_DD,"SmartWAN_Versions DropDown");
 		logInfo("Verifying SmartWAN_Versions Drop down options");
 		
 		softassert.assertTrue(!getText(addDevice_SmartWAN_Versions_DD).equalsIgnoreCase(""));

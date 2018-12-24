@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC_1_64_Verify_Representative_choose_WAN_versionOf_VeloCloud">
+      <class name="testCases.TC_1_87_HyperLinks_Log_0n_MAC_Inventory">
         <methods>
           <include name="beforeSuite"/>
+          <include name="verifyReceonciliationPremierCount"/>
           <include name="afterSuite"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
-          <include name="tC_1_64_Test_Whether_care_representative_is_able_to_choose_SmartWAN_version_Of_VeloCloud_devices"/>
         </methods>
-      </class> <!-- testCases.TC_1_64_Verify_Representative_choose_WAN_versionOf_VeloCloud -->
+      </class> <!-- testCases.TC_1_87_HyperLinks_Log_0n_MAC_Inventory -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

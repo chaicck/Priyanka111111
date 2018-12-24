@@ -5,123 +5,155 @@ import static org.testng.Assert.assertTrue;
 import javax.accessibility.AccessibleRelationSet;
 
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
 import demo.businesslogic.MediatorClass;
 import ru.yandex.qatools.ashot.util.JsCoords;
+import utils.AssertSoftly;
 
 public class TC_1_83_Admin_Carriers extends MediatorClass {
-	String engineering_carriers_viewAllCarrierAcs = "xpath=//a[@href='/carrier/listAllAccounts/']";
-	String engineering_carriers_addCarrier = "xpath=//a[@href='/carrier/add/']";
-	String engineering_carriers_addCarrier_carrier_Name ="id=name";
-	String engineering_carriers_addCarrier_carrier_notes = "id=notes";
-	String engineering_carriers_addCarrier_saveBtn = "xpath=(//button[@type=\"submit\"])[2]";
-	// engineering_carriers_addCarrier_details_saveBtn="xpath=//button[@class='btn
-	// btn-primary pull-right btn-sm']";
-	String engineering_carriers_carrierNames_table = "xpath=//*[@id='carrier_table']/tbody/tr/td[2]";
-	String engineering_carriers_carrierNames_magnifier = "//*[@id='carrier_table']/tbody/tr/td[%s]";
-	// carrier section locators
-	  String engineering_carriers_carrieradd = "xpath=//a[@href='/carrier/add/']";
-	String engineering_carriers_carrierSection_saveBtn = "xpath=(//button[@type=\"submit\"])[3]";
-	String engineering_carriers_carrierSection_carrierState_DD = "id=carrier_state_id";
-	String engineering_carriers_carrierSection_carrier_note = "id=carrier_note";
-	String engineering_carriers_carrierSection_manageVLANs = "xpath=//a[starts-with(@href,'/carrier/listVlan/carrier_id')]";
-	String engineering_carriers_carrierSection_successPopup = "xpath=//button[@class='btn btn-default center-block']";
+	/**
+	 * @author ${Priyanka}
+	 *
+	 * @Test Case name ${CDRConfig}
+	 * @Date ${}
+	 * @Modified ${12/08/2018}
+	 */
+	/**
+	 * TestCase Description:In CDRConfig Page Verify On/Off Buttons And Add
+	 * Link_Manage_SFTP_Credentials Account
+	 */
 
-	String engineering_carriers_carrierSection_carrierAccountsHeadLine = "xpath=//table[@class='table table-striped table-condensed table-hover']/caption";
-	String engineering_carriers_carrierSection_carrierAccounts_tableHeadings = "xpath=//table[@class='table table-striped table-condensed table-hover']/thead/tr/th";
-  
-	String adminLInk="id=dd-Admin";
-	String engineering_carriers_carrierSection_AddCarrierAccount = "xpath=//a[starts-with(@href,'/carrier/addAccount/carrier_id')]";
-	String engineering_carriers_carrierSection_AddCarrierAccount_acNumber = "id=carrier_account_number";
-	String engineering_carriers_carrierSection_AddCarrierAccount_description = "id=description";
-	String engineering_carriers_carrierSection_AddCarrierAccount_addBtn = "xpath=(//button[@type='submit'])[2]";
-	String engineering_carriers_carrierAccounts_acNumberTable = "xpath=//table[@class='table table-striped table-condensed table-hover']/tbody/tr/td[2]";
-	String engineering_carriers_carrierCircuitPopUps = "xpath=//table[@class='table table-striped table-condensed']/caption";
-	String engineering_carriers_carrierCircuitPopUps_TableHeadline_Circuit_Type = "xpath=(//table[@class='table table-striped table-condensed']/thead/tr/th)[1]";
-	String engineering_carriers_carrierCircuitPopUps_TableHeadline_pop = "xpath=(//table[@class='table table-striped table-condensed']/thead/tr/th)[3]";
-	String engineering_carriers_logEntriesHeadLine = "xpath=(//table[@class='table table-striped table-condensed']/caption)[2]";
-	String engineering_carriers_logEntriesTableHeadLines = "xpath=(//table[@class='table table-striped table-condensed']/thead)[2]/tr/th";
-	String engineering_carriers_carrierCircuitPopUps_addCircuitType = "xpath=//a[@href='#circuit_type_modal']";
-	String engineering_carriers_carrierCircuitPopUps_addCircuitType_circuitType_DD = "id=circuit_type_id";
-	String engineering_carriers_carrierCircuitPopUps_addCircuitType_pop_DD = "id=pop_id";
-	String engineering_carriers_carrierCircuitPopUps_addCircuitType_addBtn = "xpath=//button[@class='btn btn-primary btn-block btn-sm']";
-	String engineering_carriers_carrierCircuitPopUps_deleteBtn = "xpath=//a[@class='carrierCircuitTypeDelete']";
-	
-	 @Test(alwaysRun=true,enabled=true, dataProvider = "Authentication")
-	public void tC_1_83_Admin_Carriers(String zUserName, String zPassword) throws Throwable {
-		
-		logger = extent.startTest("1.83 Test ID : 15244 - ZEUS-ADMIN-24_Admin_Carriers").assignCategory("Admin","Regression test");
+	@Test(alwaysRun = true, enabled = true)
+	public void tC_1_83_Admin_Carriers(ITestContext context) throws Throwable {
+
+		// * Below variables written to get input data from excel sheet-Testdata.xlsx and and configuration file - LoginCredentails.properties
+		boolean isassert;
+		String[] loginDetails;
+		loginDetails = getCredentails(context);
+		AssertSoftly softassert = new AssertSoftly();
+		String zUserName = loginDetails[0];
+		String zPassword = loginDetails[1];
+		String verifytext1 = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 1);
+		String tyepTxt1 = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 2);
+		String activeTxt = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 3);
+		String inActiveTxt = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 4);
+		String tyepTxt2 = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 5);
+		String verifytext2 = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 6);
+		String verifytext3 = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 7);
+		String verifytext4 = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 8);
+		String verifytext5 = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 9);
+		String verifytext6 = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 10);
+		String verifytext7 = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 11);
+		String carrierNameTxt = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 12);
+		String accountNumberTxt = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 13);
+		String listElements = getTestData(this.getClass().getSimpleName()
+				.substring(0, 8), 14);
+		String carrierName = carrierNameTxt + randomString(3);
+		String accountNumber = randomNum(5);
+		String description = accountNumberTxt + randomString(3);
+
+		// * logger method for report starting from here
+		logger = extent.startTest(
+				"1.83 Test ID : 15244 - ZEUS-ADMIN-24_Admin_Carriers")
+				.assignCategory("Admin", "Regression test");
 		logInfo("TestCase Description:Admin select Engineering and select Carriers,now Verify view all carrier accounts and Add Carrier,Add carrier account,Add circuit type and verify");
-		type(userNameTxt, zUserName, "User name");
-		type(passTxt, zPassword, "Password");
-		click(submitBtn, "Submit button");
+
+		// * Below Code written to verify login
+		login(zUserName, zPassword);
+
 		waitForElementPresent(adminLInk, 300);
 		actionsClick(adminLInk, "Admin LInk");
-		mouseHoverMove(engineering,"Engineering", engineering_carriers,"Carriers");
-		// Verify(engineering,engineering_carriers ,engineering_subMenu_headLine,
-		// "Carriers");
-		String s="className=clearfix";
-		System.out.println("**************************************** "+getText(s));
-		// verifyText(engineering_subMenu_headLine, "Carriers", "Verifying HeadLine
-		// text");
+		mouseHoverMove(engineering, "Engineering", engineering_carriers,
+				"Carriers");
 
 		waitForElementToBeClickable(engineering_carriers_viewAllCarrierAcs);
-		Thread.sleep(60000);
+//		Thread.sleep(60000);
 		waitForElementPresent(engineering_carriers_viewAllCarrierAcs, 300);
-		verifyText(engineering_carriers_viewAllCarrierAcs, "View All Carrier Accounts", "View All Carrier Accounts");
+
+		isassert = verifyText(engineering_carriers_viewAllCarrierAcs,
+				verifytext1, "View All Carrier Accounts");
+		softassert.assertEquals(isassert, true, "Verified text " + verifytext1);
+
 		waitForElementPresent(engineering_carriers_addCarrier, 300);
-		actionsClick(engineering_carriers_addCarrier,"Add Carrier");
-		Thread.sleep(60000);
-		String carrierName = "Priyanka " + randomString(3);
+		actionsClick(engineering_carriers_addCarrier, "Add Carrier");
+//		Thread.sleep(60000);
+
 		waitForElementPresent(engineering_carriers_addCarrier_carrier_Name, 300);
-		type(engineering_carriers_addCarrier_carrier_Name, carrierName, "Carrier name ");
-		type(engineering_carriers_addCarrier_carrier_notes, "test", "Carrier notes");
+		type(engineering_carriers_addCarrier_carrier_Name, carrierName,
+				"Carrier name ");
+		type(engineering_carriers_addCarrier_carrier_notes, tyepTxt1,
+				"Carrier notes");
 		waitForElementPresent(engineering_carriers_addCarrier_saveBtn, 300);
-		actionsClick(engineering_carriers_addCarrier_saveBtn,"save");
-		Thread.sleep(1000);
+		actionsClick(engineering_carriers_addCarrier_saveBtn, "save");
+//		Thread.sleep(1000);
 		waitForElementPresent(adminLInk, 300);
 		actionsClick(adminLInk, "Admin LInk");
-		mouseHoverMove(engineering,"Engineering", engineering_carriers, "Carriers");
-		//Verify(engineering, engineering_carriers, engineering_subMenu_headLine, "Carriers");
-		String engineering_carriers_carrierNames_magnifier1 = "xpath=//*[@id='carrier_table']/tbody/tr/td[1]";
-		// verifyTextInColumnClickOtherColumnJS(engineering_carriers_carrierNames_table,
-		// engineering_carriers_carrierNames_magnifier, carrierName);
-		Thread.sleep(30000);
+		mouseHoverMove(engineering, "Engineering", engineering_carriers,
+				"Carriers");
+
+//		Thread.sleep(30000);
 		waitForElementPresent(engineering_carriers_carrierNames_magnifier1, 300);
-		actionsClick(engineering_carriers_carrierNames_magnifier1,"Selected any carrier");
+		actionsClick(engineering_carriers_carrierNames_magnifier1,
+				"Selected any carrier");
 		// carrier section
 		waitForElementPresent(engineering_carriers_carrierSection_carrierState_DD, 300);
-		verifyDropDownValue(engineering_carriers_carrierSection_carrierState_DD, "Active");
-		verifyDropDownValue(engineering_carriers_carrierSection_carrierState_DD, "Inactive");
-		verifyElementText(engineering_carriers_carrierSection_carrier_note, "");
+
+		isassert = verifyDropDownValue(engineering_carriers_carrierSection_carrierState_DD, activeTxt);
+		softassert.assertEquals(isassert, true, "Verified text " + activeTxt);
+
+		isassert = verifyDropDownValue(engineering_carriers_carrierSection_carrierState_DD,inActiveTxt);
+		softassert.assertEquals(isassert, true, "Verified text " + inActiveTxt);
+		
+		isassert = verifyElementText(
+				engineering_carriers_carrierSection_carrier_note, "");
+		softassert.assertEquals(isassert, true, "Verified text "+ engineering_carriers_carrierSection_carrier_note);
 		waitForElementToBeClickable(engineering_carriers_carrierSection_manageVLANs);
 		waitForElementToBeClickable(engineering_carriers_carrierSection_saveBtn);
 
-		if (selectedOptionDroDown(engineering_carriers_carrierSection_carrierState_DD).equalsIgnoreCase("Active")) {
-			selectDropDownByVisibleText(engineering_carriers_carrierSection_carrierState_DD, "Inactive");
-		} else
-			selectDropDownByVisibleText(engineering_carriers_carrierSection_carrierState_DD, "Active");
+		if (selectedOptionDroDown(
+				engineering_carriers_carrierSection_carrierState_DD)
+				.equalsIgnoreCase(activeTxt)) {
+			selectDropDownByVisibleText(
+					engineering_carriers_carrierSection_carrierState_DD,
+					inActiveTxt);
+		}
+
+		selectDropDownByVisibleText(engineering_carriers_carrierSection_carrierState_DD, activeTxt);
 		clearText(engineering_carriers_carrierSection_carrier_note);
-		waitForElementPresent(engineering_carriers_carrierSection_carrier_note, 300);
-		type(engineering_carriers_carrierSection_carrier_note, "test edit", "Add carrier state notes");
+		waitForElementPresent(engineering_carriers_carrierSection_carrier_note,300);
+		type(engineering_carriers_carrierSection_carrier_note, tyepTxt2,"Add carrier state notes");
 		waitForElementPresent(engineering_carriers_carrierSection_saveBtn, 300);
-		actionsClick(engineering_carriers_carrierSection_saveBtn,"Save");
+		actionsClick(engineering_carriers_carrierSection_saveBtn, "Save");
 		waitForElementPresentE(engineering_carriers_carrierSection_successPopup, 200);
 		actionsClick(engineering_carriers_carrierSection_successPopup);
-		waitForElementPresent(engineering_carriers_carrierSection_carrierAccountsHeadLine, 300);
-		verifyText(engineering_carriers_carrierSection_carrierAccountsHeadLine, "Carrier Accounts", "");
-		verifyAllListValuesInOrder(engineering_carriers_carrierSection_carrierAccounts_tableHeadings,
-				AddElementsIntoList(";Account Number;Description;Bill Day;Active?;Last Invoice"));
+		waitForElementPresent(engineering_carriers_carrierSection_carrierAccountsHeadLine,300);
 
-;
+		isassert = verifyText(engineering_carriers_carrierSection_carrierAccountsHeadLine,verifytext2, "");
+		softassert.assertEquals(isassert, true, "Verified text " + verifytext2);
+
+		isassert = verifyAllListValuesInOrder(engineering_carriers_carrierSection_carrierAccounts_tableHeadings,AddElementsIntoList(listElements));
+		softassert.assertEquals(isassert, true, "Verified text " + listElements);
+
 		Thread.sleep(30000);
 		actionsClick(engineering_carriers_carrierSection_AddCarrierAccount,"Add Carrier Account");
-		String accountNumber = randomNum(5);
-		String description = "test Description " + randomString(3);
-		waitForElementPresent(engineering_carriers_carrierSection_AddCarrierAccount_acNumber, 300);
-		type(engineering_carriers_carrierSection_AddCarrierAccount_acNumber, accountNumber, "Account number");
-		type(engineering_carriers_carrierSection_AddCarrierAccount_description, description, "Description");
+		waitForElementPresent(engineering_carriers_carrierSection_AddCarrierAccount_acNumber,300);
+		type(engineering_carriers_carrierSection_AddCarrierAccount_acNumber,accountNumber, "Account number");
+		type(engineering_carriers_carrierSection_AddCarrierAccount_description,description, "Description");
 		waitForElementPresent(engineering_carriers_carrierSection_AddCarrierAccount_addBtn, 300);
 		actionsClick(engineering_carriers_carrierSection_AddCarrierAccount_addBtn,"Save");
 		Thread.sleep(9000);
@@ -129,37 +161,51 @@ public class TC_1_83_Admin_Carriers extends MediatorClass {
 		Thread.sleep(8000);
 		navigateBack();
 		Thread.sleep(8000);
-		// carrierCircuitPopUps
+		// * carrierCircuitPopUps
 		Thread.sleep(8000);
 		scrollElementIntoView(engineering_carriers_carrierCircuitPopUps);
-		verifyText(engineering_carriers_carrierCircuitPopUps, "Carrier Circuit and Pops for New Circuits", "Verified circuit popups header Text");
-        Thread.sleep(9000);
+		
+		isassert = verifyText(engineering_carriers_carrierCircuitPopUps, verifytext3, "Verified circuit popups header Text");
+		softassert.assertEquals(isassert, true, "Verified text " + verifytext3);
+		
+		Thread.sleep(9000);
 		scrollElementIntoView(engineering_carriers_carrierCircuitPopUps_TableHeadline_Circuit_Type);
-		verifyText(engineering_carriers_carrierCircuitPopUps_TableHeadline_Circuit_Type, "Circuit Type", "verified Circuit Type header Text");
-		verifyText(engineering_carriers_carrierCircuitPopUps_TableHeadline_pop, "Pop", "verified Pop header Text");
+		isassert = verifyText(engineering_carriers_carrierCircuitPopUps_TableHeadline_Circuit_Type, verifytext4, "verified Circuit Type header Text");
+		softassert.assertEquals(isassert, true, "Verified text " + verifytext4);
+		
+		isassert = verifyText(engineering_carriers_carrierCircuitPopUps_TableHeadline_pop,verifytext5, "verified Pop header Text");
+		softassert.assertEquals(isassert, true, "Verified text " + verifytext5);
+		
 		Thread.sleep(30000);
 		waitForElementPresent(engineering_carriers_carrierCircuitPopUps_addCircuitType, 300);
 		actionsClick(engineering_carriers_carrierCircuitPopUps_addCircuitType,"Add Circuit Type");
 		Thread.sleep(30000);
-		waitForElementPresent(engineering_carriers_carrierCircuitPopUps_addCircuitType_circuitType_DD, 200);
-		selectDropDownByIndex(engineering_carriers_carrierCircuitPopUps_addCircuitType_circuitType_DD, 2);
-		selectDropDownByIndex(engineering_carriers_carrierCircuitPopUps_addCircuitType_pop_DD, 2);
-		waitForElementPresent(engineering_carriers_carrierCircuitPopUps_addCircuitType_addBtn, 200);
+		
+		waitForElementPresent(engineering_carriers_carrierCircuitPopUps_addCircuitType_circuitType_DD,200);
+		selectDropDownByIndex(engineering_carriers_carrierCircuitPopUps_addCircuitType_circuitType_DD,	2);
+		selectDropDownByIndex(engineering_carriers_carrierCircuitPopUps_addCircuitType_pop_DD,2);
+		waitForElementPresent(engineering_carriers_carrierCircuitPopUps_addCircuitType_addBtn,200);
 		actionsClick(engineering_carriers_carrierCircuitPopUps_addCircuitType_addBtn,"Add Circuit type account");
 		Thread.sleep(3000);
 		waitForElementPresent(engineering_carriers_carrierCircuitPopUps_deleteBtn, 200);
 		JSClick(engineering_carriers_carrierCircuitPopUps_deleteBtn,"Delete circuit type");
 		Thread.sleep(9000);
 		acceptAlert();
-		// checkAll(engineering_carriers_carrierCircuitPopUps_deleteBtn);
 
 		Thread.sleep(8000);
 		// Log Entries
 		scrollElementIntoView(engineering_carriers_logEntriesHeadLine);
-		verifyText(engineering_carriers_logEntriesHeadLine, "Log Entries", "Verified Log Entries header");
-		verifyText(engineering_carriers_logEntriesHeadLine, "show all", "Verified show all header");
+		
+		isassert = verifyText(engineering_carriers_logEntriesHeadLine,verifytext6, "Verified Log Entries header");
+		softassert.assertEquals(isassert, true, "Verified text " + verifytext6);
+		
+		isassert = verifyText(engineering_carriers_logEntriesHeadLine,verifytext7, "Verified show all header");
+		softassert.assertEquals(isassert, true, "Verified text " + verifytext6);
+
+		// * Below method written to logout application
+		logOut();
+		softassert.assertAll();
 
 	}
 
-	
 }

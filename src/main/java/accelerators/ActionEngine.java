@@ -365,8 +365,9 @@ public class ActionEngine extends TestEngine {
 					.elementToBeClickable(byLocator(locator)));
 			 flag = true;
 		} catch (Exception e) {
-			System.out.println(e);	
-			logger.log(LogStatus.ERROR, e);
+			System.out.println("Element is not clickable due to exception" +e);	
+			logger.log(LogStatus.FAIL, "Element is not clickable due to exception" +e);
+			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			throw e;
 	
 		}
@@ -387,9 +388,8 @@ public class ActionEngine extends TestEngine {
 					.elementToBeClickable(byLocator(locator)));
 			return flag = true;
 		} catch (Exception e) {
-			logger.log(LogStatus.ERROR, e);
-			System.out.println(e);
-			;
+			logger.log(LogStatus.FAIL,"Element is not clickable due to exception" +e);
+			System.out.println("Element is not clickable due to exception" +e);
 		}
 		return flag;
 	}
@@ -431,7 +431,7 @@ public class ActionEngine extends TestEngine {
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 			return flag = true;
 		} catch (Exception e) {
-			logger.log(LogStatus.ERROR, e);
+			logger.log(LogStatus.FAIL, e);
 			System.out.println(e);
 		}
 		return flag;
@@ -448,8 +448,8 @@ public class ActionEngine extends TestEngine {
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 			return flag = true;
 		} catch (Exception e) {
-			logger.log(LogStatus.ERROR, e);
-			System.out.println(e);
+			logger.log(LogStatus.FAIL, "Element is not clickable due to exception" +e);
+			System.out.println("Element is not clickable due to exception" +e);
 		}
 		return flag;
 	}
@@ -461,8 +461,9 @@ public class ActionEngine extends TestEngine {
 	 *            locator to element
 	 * @param timeOut
 	 *            time to wait
+	 * @throws Throwable 
 	 */
-	protected void waitForElementNotPresent(final String locator, int timeOut) {
+	protected void waitForElementNotPresent(final String locator, int timeOut) throws Throwable {
 		try {
 			WebDriverWait wait = new WebDriverWait(Driver, timeOut);
 			wait.until(ExpectedConditions.not(ExpectedConditions
@@ -472,8 +473,10 @@ public class ActionEngine extends TestEngine {
 					&& !e.getCause().getClass().toString()
 							.contains("NoSuchElementException")) {
 				// takeScreenshot();
-				logger.log(LogStatus.FAIL, e);
-				System.out.println(e);
+				System.out.println("Element is not present on page due to exception" +e);	
+				logger.log(LogStatus.FAIL, "Element is not present on page due to exception" +e);
+				logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
+				e.printStackTrace();
 			}
 
 		}
@@ -507,8 +510,9 @@ public class ActionEngine extends TestEngine {
 	 *
 	 * @param locator
 	 *            locator to element
+	 * @throws Throwable 
 	 */
-	protected void waitForElementNotPresent(final String locator) {
+	protected void waitForElementNotPresent(final String locator) throws Throwable {
 		waitForElementNotPresent(locator, pauseS);
 	}
 
@@ -586,14 +590,27 @@ public class ActionEngine extends TestEngine {
 	 * @param locator
 	 *            locator of the element in format xpath=locator; css=locator
 	 *            etc
+	 * @throws Throwable 
 	 */
 
-	public void actionsClick(String locator) {
-
-		Actions ob = new Actions(Driver);
-		ob.moveToElement(getElement(locator));
-		ob.click(getElement(locator));
-		ob.build().perform();
+	public void actionsClick(String locator) throws Throwable {
+		try {
+			Actions ob = new Actions(Driver);
+			ob.moveToElement(getElement(locator));
+			ob.click(getElement(locator));
+			ob.build().perform();
+		} catch (Exception e) {
+			logger.log(LogStatus.FAIL,
+					"Failed to click on element due to exception :" + e);
+			System.out.println("Failed to click on element due to exception :"
+					+ e);
+			logger.log(LogStatus.FAIL,
+					logger.addScreenCapture(capture(Driver, "screenShot")));
+			System.out
+					.println("Element is not available on page due to exception"
+							+ e);
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -723,15 +740,14 @@ public class ActionEngine extends TestEngine {
 			}else
 			{
 				logger.log(LogStatus.FAIL, "Expected text '" + text + "' is not matching ");
-				System.out.println("Expected text '" + text
-						+ "' is not matching");
+				System.out.println("Expected text '" + text+ "' is not matching");
 			}
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.log(LogStatus.FAIL, "Unable to locate elemnt " +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
-			System.out.println("Unable to locate elemnt " + e);
+			System.out.println("Unable to locate element " + e);
 		
 		}
 		return flag;
@@ -928,8 +944,6 @@ public class ActionEngine extends TestEngine {
 					// scrollElementIntoView(locator3);
 					flag = true;
 					return getElement(locator3).getText();
-					
-
 				}
 
 			}
@@ -973,6 +987,7 @@ public class ActionEngine extends TestEngine {
 					String locator3 = String.format(locator2, (i + 1));
 					scrollElementIntoView(locator3);
 					JSClick(locator3);
+					logger.log(LogStatus.PASS, "Element --> " +locator3+ "clicked successfully");
 					// getElement(locator3).click();
 					break;
 				}
@@ -980,8 +995,9 @@ public class ActionEngine extends TestEngine {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			logger.log(LogStatus.ERROR, e);
-			System.out.println(e);
+			logger.log(LogStatus.FAIL, "Element is not available on page due to exception" +e);
+			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
+			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
 		}
 
@@ -1129,6 +1145,8 @@ public class ActionEngine extends TestEngine {
 			WebElement we = getElement(locatorName);
 			if (we.isDisplayed())
 				flag = true;
+					logger.log(LogStatus.PASS,"Element -->"+ elementName + "is displayed on page");
+					System.out.println("Element -->"+ elementName + "is displayed on page");
 			return flag;
 
 		} catch (NoSuchElementException e) {
@@ -1239,7 +1257,7 @@ public class ActionEngine extends TestEngine {
 			we.sendKeys(testdata);
 			flag = true;
 		} catch (Exception e) {
-			logger.log(LogStatus.ERROR, e);
+			logger.log(LogStatus.ERROR, "Element is not available on page due to exception" +e);
 			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 			System.out.println("Element is not available on page due to exception" +e);
 			e.printStackTrace();
@@ -1368,8 +1386,9 @@ public class ActionEngine extends TestEngine {
 			return elements;
 
 		} catch (Exception e) {
-			logger.log(LogStatus.ERROR, e);
-			System.out.println(e.getMessage());
+			logger.log(LogStatus.ERROR, "Element is not available on page due to exception" +e);
+			logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
+			System.out.println("Element is not available on page due to exception" +e);
 			throw e;
 		}
 

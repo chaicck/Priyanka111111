@@ -16,5 +16,9 @@ public interface OR_ReconsiliationPage {
     String agingGraphGoBtn="xpath=//button[@class='btn btn-primary']";
     String agingGraphChart="id=chart";
     String agingGraphExport="xpath=//button[@class='btn btn-success btn-default pull-right']";
+    
+	 String Reconciliation_EMAC_CheckALl="xpath=//input[@type='checkbox']";
+	 String Reconciliation_ReconcileBtn ="xpath=(//button[@type='submit'])[3]";
+	 String Reconciliation_ReconcileBtn_save="xpath=(//button[@type='submit'])[4]";
 
 }

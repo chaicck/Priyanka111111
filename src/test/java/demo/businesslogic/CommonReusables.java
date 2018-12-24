@@ -340,6 +340,8 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		try {
 			if (getElement(locator).getText().contains(text)) {
 				flag = true;
+				logger.log(LogStatus.PASS, "Verified Expected text on webpage i.e. '" + text + "'" +"is matching");
+				System.out.println("Verified Expected text on webpage i.e. '" + text + "'" +"is matching");
 			}
 		} catch (NoSuchElementException e) {
 			// TODO: handle exception
@@ -398,6 +400,7 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 				flag = false;
 				logger.log(LogStatus.FAIL,"List of value not in order -->"+ list.get(i));
 				System.out.println("List of value not in order -->"+ list.get(i));
+				logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
 				break;
 			}
 		}
