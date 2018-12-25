@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -27,6 +28,7 @@ import javax.xml.xpath.XPathExpressionException;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
@@ -150,10 +152,39 @@ public class TestEngine extends ExcelUtils {
 							+ "\\Drivers\\chromedriver.exe");
 			capabilities = DesiredCapabilities.chrome();
 			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--disable-extensions");
+			options.addArguments("-incognito");
+			options.addArguments("test-type");
+			options.addArguments("start-maximized");
+			options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
+			options.setExperimentalOption("useAutomationExtension", false);
+			capabilities.setCapability("chrome.exe", "C:\\Program Files (x86)\\Google\\Chrome\\Application");
+			capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
+			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+			this.WebDriver = new ChromeDriver(capabilities);
+			WebDriver.manage().deleteAllCookies();
+			break;
+		
+	  /* case "firefox":
+			System.setProperty("webdriver.gecko.driver",
+					System.getProperty("user.dir")
+							+ "\\Drivers\\geckodriver.exe");
+			capabilities = new DesiredCapabilities();
+			capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS,
+					true);
+			this.WebDriver = new FirefoxDriver(capabilities);
+			break;
+		case "chrome":
+
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir")
+							+ "\\Drivers\\chromedriver.exe");
+			capabilities = DesiredCapabilities.chrome();
+			ChromeOptions options = new ChromeOptions();
 			options.addArguments("test-type");
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			this.WebDriver = new ChromeDriver();
-			break;
+			break;*/
 		}
 	}
 

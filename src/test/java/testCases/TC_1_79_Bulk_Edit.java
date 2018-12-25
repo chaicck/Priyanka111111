@@ -55,10 +55,6 @@ public class TC_1_79_Bulk_Edit extends CommonReusables implements OR_HomePage,
 
 		// * Below Code written to verify login
 		login(zUserName, zPassword);
-
-		waitForElementPresent(searchTextBox, 300);
-		click(srchDd, "Search DropDown");
-		click(customerLnk, "Customer Link");
 		waitForElementPresent(searchTextBox, 300);
 		type(searchTextBox, customerId, "searchBox");
 		type(searchTextBox, "searchBox", Keys.ENTER);

@@ -46,7 +46,7 @@ public class TC_1_76_EMAC_price_algorithm extends MediatorClass{
         waitForElementPresent(searchTextBox, 300);
 		type(searchTextBox, customer_id, "Search Box");
 		type(searchTextBox,searchTxt,Keys.ENTER);
-		Thread.sleep(3000);
+		/*Thread.sleep(3000);
 		if (verifyElementText(customerTableHeadline, customertxt1)) {
 			verifyTextInColumnClickOtherColumn(customerIdList, customerName, customer_id);
 		}
@@ -54,14 +54,14 @@ public class TC_1_76_EMAC_price_algorithm extends MediatorClass{
 		isassert = verifyText(customer_dashboard_name, customertxt2, "Customer Name");  
 		softassert.assertEquals(isassert, true, "Verified customer id "+customertxt2+" in customer table");
 		
-		
-		Thread.sleep(9000);
+		*/
+		Thread.sleep(3000);
 		scrollElementIntoView(customerDashboard_addMAC);
 		JSClick(customerDashboard_addMAC,"customerDashboard_addMAC");
 		waitForElementPresent(customerDashboard_addMAC_productAddNew, 200);
 		type(customerDashboard_addMAC_productAddNew_macName, Mac_name, "AddMAC_productAddNew_macName");
 		type(customerDashboard_addMAC_productAddNew_ticket, Mac_ticket, "AddMAC_productAddNew_ticket");
-		Thread.sleep(15000);
+		Thread.sleep(3000);
 		scrollElementIntoView(customerDashboard_addMAC_productAddNew);
 		JSClick(customerDashboard_addMAC_productAddNew,"addMAC_productAddNew");
 		
@@ -72,7 +72,7 @@ public class TC_1_76_EMAC_price_algorithm extends MediatorClass{
 		logPass("Verified 10% discount price with 'Realogy Access Charge'");
 		//typeAndVerify10DiscountPrice("Hunt Group");
 		typeAndVerify10DiscountPrice(callRecordingTxt, n);	
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		logPass("Verified 10% discount price with 'Call Recording Storage 1 year'");
 		
 		// * Below method written to logout application

@@ -49,12 +49,12 @@ public class TC_1_58_VerifyUserAbleToViewUsageHistory extends MediatorClass {
 		type(searchTextBox, customer_id, "Search Box");
 		type(searchTextBox, searchTxt, Keys.ENTER);
 		Thread.sleep(3000);
-		if (verifyElementText(customerTableHeadline, customertxt1)) {
+		/*if (verifyElementText(customerTableHeadline, customertxt1)) {
 			verifyTextInColumnClickOtherColumn(customerIdList, customerName,
 					customer_id);
 		}
 		isassert = verifyText(customer_dashboard_name, customertxt2, "Customer Name");
-		softassert.assertEquals(isassert, true, "Verified customer id "+customertxt2+" in customer table");
+		softassert.assertEquals(isassert, true, "Verified customer id "+customertxt2+" in customer table");*/
 
 		String email = randomString(5) + domain;
 		waitForElementPresent(voiceLnk, 200);

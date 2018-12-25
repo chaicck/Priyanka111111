@@ -1156,7 +1156,7 @@ public class ActionEngine extends TestEngine {
 
 	}
 	
-	protected boolean isElementPresentOnPage(String locatorName)
+/*	protected boolean isElementPresentOnPage(String locatorName)
 	{
 		boolean flag = false;
 		try {
@@ -1169,7 +1169,7 @@ public class ActionEngine extends TestEngine {
 		}
 		return flag;
 		
-	}
+	}*/
 
 	/**
 	 * This method is used to loginfo

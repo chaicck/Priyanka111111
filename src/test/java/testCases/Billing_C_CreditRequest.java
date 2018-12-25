@@ -127,7 +127,7 @@ public class Billing_C_CreditRequest extends MediatorClass {
 	
 		
 		// * Below method written to logout application
-		logOut();
+		logOutbilling();
 		softassert.assertAll();
 
 	

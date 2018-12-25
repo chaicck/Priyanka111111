@@ -219,7 +219,7 @@ public class SearchDropDown extends MediatorClass {
 		softassert.assertEquals(isassert, true, "Verify text on page ");
 		softassert.assertAll();
 
-		// Below method writtent to do logout from application
+		// Below method written to do logout from application
 		logOut();
 	}
 

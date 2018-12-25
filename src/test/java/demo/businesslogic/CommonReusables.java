@@ -727,7 +727,7 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 	        extent.endTest(logger);
 	        extentTestEndflag=true;
 	        extent.flush();
-	    	Driver.close();;
+	    	Driver.quit();
 	        }
 	}
 

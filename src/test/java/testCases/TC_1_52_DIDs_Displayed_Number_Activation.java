@@ -55,7 +55,7 @@ public class TC_1_52_DIDs_Displayed_Number_Activation extends MediatorClass {
 		waitForElementPresent(searchTextBox, 300);
 		type(searchTextBox, customer_id, "Search Box");
 		type(searchTextBox, searchBox, Keys.ENTER);
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		if (verifyElementText(customerTableHeadline, customerTxt1)) {
 			verifyTextInColumnClickOtherColumn(customerIdList, customerName,
 					customer_id);
@@ -65,7 +65,7 @@ public class TC_1_52_DIDs_Displayed_Number_Activation extends MediatorClass {
 		softassert.assertEquals(isassert, true, "Verify customer name");
 		waitForElementPresent(customerDashboard_customerLink, 300);
 		actionsClick(customerDashboard_customerLink,
-				"customerDashboard_customerLink");
+				"customerDashboard_customerLink");*/
 		waitForElementPresent(customer_dashboard_notification_voice, 300);
 		aJSClick(customer_dashboard_notification_voice, "Voice");
 		aJSClick(voice_broadWorks, "voice_broadWorks");

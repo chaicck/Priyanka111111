@@ -62,7 +62,7 @@ public class TC_1_100_Sales_Order_Edit extends MediatorClass {
 		actionsClick(admin_menu_salestool_salesorder_Edit_Search_button);
 		waitForElementPresent(admin_menu_salestool_salesorder_Edit_Customer_name_text, 300);
 		
-		isassert = verifyText(admin_menu_salestool_salesorder_Edit_Customer_name_text,"Gnaeh Name", "");
+		isassert = verifyText(admin_menu_salestool_salesorder_Edit_Customer_name_text,"Customer Name", "");
 		softassert.assertEquals(isassert, true, "Verify_sales_tools_submenu_Customer_name_text");
 		
 		isassert = verifyText(admin_menu_salestool_salesorder_Edit_Customer_ID_text, "CustomerID", "");

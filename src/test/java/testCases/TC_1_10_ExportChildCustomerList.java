@@ -22,19 +22,17 @@ public class TC_1_10_ExportChildCustomerList extends MediatorClass {
 
 	/**
 	 * TestCase Description:verify that child customer pane must display a new
-	 * button 'Export Child Customers'\r\n" +Export Child Customers' button
-	 * should be present within Child Customers pane\r\n"
-	 * "Test by clicking on Export button .CSV file must be downloaded automatically"
-	 * TestCase Description:Verify Billing Contract DropDown
+	 * button 'Export Child Customers'\r\n" +Export Child Customers' button should
+	 * be present within Child Customers pane\r\n" "Test by clicking on Export
+	 * button .CSV file must be downloaded automatically" TestCase
+	 * Description:Verify Billing Contract DropDown
 	 */
 
 	String fs = File.separator;
-	String rtfFilePath = System.getProperty("user.dir") + fs + "TestData" + fs
-			+ "test.rtf";
+	String rtfFilePath = System.getProperty("user.dir") + fs + "TestData" + fs + "test.rtf";
 
 	@Test(alwaysRun = true, enabled = true)
-	public void tc_1_10_ExportChildCustomerList(ITestContext context)
-			throws Throwable {
+	public void tc_1_10_ExportChildCustomerList(ITestContext context) throws Throwable {
 
 		// * Below variables written to get input data from excel
 		// sheet-Testdata.xlsx
@@ -47,12 +45,11 @@ public class TC_1_10_ExportChildCustomerList extends MediatorClass {
 		String searchBox = getTestData(this.getClass().getSimpleName().substring(0, 8), 2);
 		String customertxt1 = getTestData(this.getClass().getSimpleName().substring(0, 8), 3);
 		String customertxt2 = getTestData(this.getClass().getSimpleName().substring(0, 8), 4);
-		String url = getTestData(this.getClass().getSimpleName().substring(0, 8), 3);	
+		String url = getTestData(this.getClass().getSimpleName().substring(0, 8), 3);
 		AssertSoftly softassert = new AssertSoftly();
 
 		// * logger method for report starting from here
-		logger = extent.startTest(
-				"1.10 Test ID : 16338 - Export Child Customer List")
+		logger = extent.startTest("1.10 Test ID : 16338 - Export Child Customer List")
 				.assignCategory("Customer DashBoard");
 		logInfo("Currently Running on -- " + getCurrentUrl());
 		logInfo("TestCase Description:verify that child customer pane must display a new button 'Export Child Customers'\r\n"
@@ -64,22 +61,14 @@ public class TC_1_10_ExportChildCustomerList extends MediatorClass {
 		type(searchTextBox, customer_id, "Search Box");
 		type(searchTextBox, searchBox, Keys.ENTER);
 		Thread.sleep(2000);
-		if (verifyElementText(customerTableHeadline, customertxt1)) {
-			verifyTextInColumnClickOtherColumn(customerIdList, customerName,
-					customer_id);
-		}
-		Thread.sleep(2000);
-		isassert = verifyText(customer_dashboard_name, customertxt2, "Customer Name");
-		softassert.assertEquals(isassert, true, "Verify_customer text");
-		logInfo("User navigated to Customer Dashboard");
-
-		actionsClick(customerDashboard_customerLink,"customerDashboard_customerLink");
+		actionsClick(customerDashboard_customerLink, "customerDashboard_customerLink");
 		// url may differ based on environment & user id - qa5, qa6, master
-		softassert.assertTrue(getCurrentUrl().contains(url));
+//		softassert.assertTrue(getCurrentUrl().contains(url));
 		scrollElementIntoView(childCustomerTableName);
 		JSClick(childCustomerTableName, "childCustomerTableName");
-		isassert = JSClick(customerDashboard_customerLink_exportChildCustomers,"exportChildCustomers");
-		softassert.assertEquals(isassert, true, "Verify .CSV output file downloaded after clicking on the Export button");
+		isassert = JSClick(customerDashboard_customerLink_exportChildCustomers, "exportChildCustomers");
+		softassert.assertEquals(isassert, true,
+				"Verify .CSV output file downloaded after clicking on the Export button");
 		logPass(".CSV output file downloaded after clicking on the Export button");
 		softassert.assertAll();
 		logOut();

@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite configfailurepolicy="continue" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [Suite]">
-  <test thread-count="5" verbose="10" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [Suite]">
+  <test name="Test(failed)">
     <parameter name="baseUrl" value="https://zeus.qa5.vonagenetworks.net"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC_1_95_Tasks_Calendar_Page">
+      <class name="testCases.TC_1_10_ExportChildCustomerList">
         <methods>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
           <include name="afterMethod"/>
-          <include name="tC_1_95_Tasks_Calendar_Page" invocation-numbers="0"/>
+          <include name="tc_1_10_ExportChildCustomerList" invocation-numbers="0"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- testCases.TC_1_95_Tasks_Calendar_Page -->
+      </class> <!-- testCases.TC_1_10_ExportChildCustomerList -->
+      <class name="testCases.TC_1_100_Sales_Order_Edit">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="tc_1_100_Sales_Order_Edit" invocation-numbers="0"/>
+          <include name="afterSuite"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testCases.TC_1_100_Sales_Order_Edit -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

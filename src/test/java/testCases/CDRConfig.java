@@ -8,7 +8,6 @@ import org.testng.asserts.SoftAssert;
 
 import utils.AssertSoftly;
 import demo.businesslogic.MediatorClass;
-import net.bytebuddy.implementation.bytecode.Throw;
 
 public class CDRConfig extends MediatorClass {
 	/**
