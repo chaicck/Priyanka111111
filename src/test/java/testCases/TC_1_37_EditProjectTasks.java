@@ -165,7 +165,7 @@ public class TC_1_37_EditProjectTasks extends MediatorClass {
 			System.out.println(ss);
 		}
 		// modifying the data..
-		Thread.sleep(15000);
+		Thread.sleep(1500);
 		selectDropDownByIndex(String.format(
 				reports_projectBtPM_projectViewEditPage_editTasks_Queue_DD, s),
 				2);
@@ -186,7 +186,7 @@ public class TC_1_37_EditProjectTasks extends MediatorClass {
 		type(String.format(
 				reports_projectBtPM_projectViewEditPage_editTasks_note, s),
 				text2 + randomString(5), "");
-		Thread.sleep(15000);
+		Thread.sleep(1500);
 		scrollUp();
 		waitForElementPresent(
 				reports_projectBtPM_projectViewEditPage_editTasks_saveBtn, 300);

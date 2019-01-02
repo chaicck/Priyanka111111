@@ -66,14 +66,14 @@ public class TC_1_18_MacProject extends CommonReusables implements OR_HomePage,
 		type(searchTextBox, id, "Search Box");
 		type(searchTextBox, searchTxt, Keys.ENTER);
 		Thread.sleep(6000);
-		if (verifyElementText(customerTableHeadline, customerTxt1)) {
+		/*if (verifyElementText(customerTableHeadline, customerTxt1)) {
 			verifyTextInColumnClickOtherColumn(customerIdList, customerName, id);
 		}
 		
 		isassert = verifyText(customer_dashboard_name, customerTxt2,"Customer Name");
 		softassert.assertEquals(isassert, true, "Verify Customer Name");
 
-		logInfo("User navigated to Customer Dashboard");
+		logInfo("User navigated to Customer Dashboard");*/
 		waitForElementPresent(addMacLink, 300);
 		scrollElementIntoView(addMacLink);
 		click(addMacLink, "Add New MAC button");

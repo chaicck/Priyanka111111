@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="18" total="28" passed="10">
+<testng-results skipped="0" failed="0" ignored="16" total="25" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="987205" started-at="2018-12-25T02:07:46Z" finished-at="2018-12-25T02:24:13Z">
+  <suite name="Suite" duration-ms="1510780" started-at="2019-01-02T03:45:21Z" finished-at="2019-01-02T04:10:31Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="987205" started-at="2018-12-25T02:07:46Z" finished-at="2018-12-25T02:24:13Z">
-      <class name="testCases.TC_1_79_Bulk_Edit">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_79_Bulk_Edit@2a17b7b6]" name="beforeMethod" is-config="true" duration-ms="13238" started-at="2018-12-24T21:21:30Z" finished-at="2018-12-24T21:21:44Z">
+    <test name="Test" duration-ms="1510780" started-at="2019-01-02T03:45:21Z" finished-at="2019-01-02T04:10:31Z">
+      <class name="testCases.TC_1_53_VIPCustomer_Filter_VIP_Types">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_53_VIPCustomer_Filter_VIP_Types@711f39f9]" name="beforeMethod" is-config="true" duration-ms="10310" started-at="2019-01-02T04:03:25Z" finished-at="2019-01-02T04:03:35Z">
           <params>
             <param index="0">
               <value>
@@ -23,35 +23,75 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="bulkEdit(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_79_Bulk_Edit@2a17b7b6]" name="bulkEdit" duration-ms="25160" started-at="2018-12-24T21:21:44Z" finished-at="2018-12-24T21:22:09Z">
+        <test-method status="PASS" signature="tC_1_53_VIPCustomer_Filter_VIP_Types(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_53_VIPCustomer_Filter_VIP_Types@711f39f9]" name="tC_1_53_VIPCustomer_Filter_VIP_Types" duration-ms="219235" started-at="2019-01-02T04:03:35Z" finished-at="2019-01-02T04:07:14Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
+                <![CDATA[org.testng.TestRunner@1187c9e8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bulkEdit -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_79_Bulk_Edit@2a17b7b6]" name="afterMethod" is-config="true" duration-ms="3365" started-at="2018-12-24T21:22:09Z" finished-at="2018-12-24T21:22:12Z">
+        </test-method> <!-- tC_1_53_VIPCustomer_Filter_VIP_Types -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_53_VIPCustomer_Filter_VIP_Types@711f39f9]" name="afterMethod" is-config="true" duration-ms="849" started-at="2019-01-02T04:07:14Z" finished-at="2019-01-02T04:07:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=bulkEdit status=SUCCESS method=TC_1_79_Bulk_Edit.bulkEdit(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_79_Bulk_Edit@2a17b7b6] output={null}]]]>
+                <![CDATA[[TestResult name=tC_1_53_VIPCustomer_Filter_VIP_Types status=SUCCESS method=TC_1_53_VIPCustomer_Filter_VIP_Types.tC_1_53_VIPCustomer_Filter_VIP_Types(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_53_VIPCustomer_Filter_VIP_Types@711f39f9] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testCases.TC_1_79_Bulk_Edit -->
-      <class name="testCases.SearchDropDown">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.SearchDropDown@7c29daf3]" name="beforeSuite" is-config="true" duration-ms="311" started-at="2018-12-24T21:07:46Z" finished-at="2018-12-24T21:07:46Z">
+      </class> <!-- testCases.TC_1_53_VIPCustomer_Filter_VIP_Types -->
+      <class name="testCases.TC_1_11_VerifyFunctionalitiesOnHomePage">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_11_VerifyFunctionalitiesOnHomePage@26aa12dd]" name="beforeMethod" is-config="true" duration-ms="10365" started-at="2019-01-02T04:02:32Z" finished-at="2019-01-02T04:02:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://zeus.qa5.vonagenetworks.net]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tc_1_11_VerifyFunctionalitiesOnHomePage(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_11_VerifyFunctionalitiesOnHomePage@26aa12dd]" name="tc_1_11_VerifyFunctionalitiesOnHomePage" duration-ms="15049" started-at="2019-01-02T04:02:42Z" finished-at="2019-01-02T04:02:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1187c9e8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_1_11_VerifyFunctionalitiesOnHomePage -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_11_VerifyFunctionalitiesOnHomePage@26aa12dd]" name="afterMethod" is-config="true" duration-ms="993" started-at="2019-01-02T04:02:57Z" finished-at="2019-01-02T04:02:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc_1_11_VerifyFunctionalitiesOnHomePage status=SUCCESS method=TC_1_11_VerifyFunctionalitiesOnHomePage.tc_1_11_VerifyFunctionalitiesOnHomePage(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_11_VerifyFunctionalitiesOnHomePage@26aa12dd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testCases.TC_1_11_VerifyFunctionalitiesOnHomePage -->
+      <class name="testCases.TC_1_18_MacProject">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC_1_18_MacProject@614ddd49]" name="beforeSuite" is-config="true" duration-ms="204" started-at="2019-01-02T03:45:21Z" finished-at="2019-01-02T03:45:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.SearchDropDown@7c29daf3]" name="beforeMethod" is-config="true" duration-ms="23358" started-at="2018-12-24T21:07:46Z" finished-at="2018-12-24T21:08:09Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_18_MacProject@614ddd49]" name="beforeMethod" is-config="true" duration-ms="10990" started-at="2019-01-02T03:45:21Z" finished-at="2019-01-02T03:45:32Z">
           <params>
             <param index="0">
               <value>
@@ -67,75 +107,35 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="searchDropDown(org.testng.ITestContext)[pri:0, instance:testCases.SearchDropDown@7c29daf3]" name="searchDropDown" duration-ms="90566" started-at="2018-12-24T21:08:09Z" finished-at="2018-12-24T21:09:40Z">
+        <test-method status="PASS" signature="addMac(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_18_MacProject@614ddd49]" name="addMac" duration-ms="26771" started-at="2019-01-02T03:45:32Z" finished-at="2019-01-02T03:45:59Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
+                <![CDATA[org.testng.TestRunner@1187c9e8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- searchDropDown -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.SearchDropDown@7c29daf3]" name="afterMethod" is-config="true" duration-ms="4938" started-at="2018-12-24T21:09:40Z" finished-at="2018-12-24T21:09:45Z">
+        </test-method> <!-- addMac -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_18_MacProject@614ddd49]" name="afterMethod" is-config="true" duration-ms="1220" started-at="2019-01-02T03:45:59Z" finished-at="2019-01-02T03:46:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=searchDropDown status=SUCCESS method=SearchDropDown.searchDropDown(org.testng.ITestContext)[pri:0, instance:testCases.SearchDropDown@7c29daf3] output={null}]]]>
+                <![CDATA[[TestResult name=addMac status=SUCCESS method=TC_1_18_MacProject.addMac(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_18_MacProject@614ddd49] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.SearchDropDown@7c29daf3]" name="afterSuite" is-config="true" duration-ms="74" started-at="2018-12-24T21:24:13Z" finished-at="2018-12-24T21:24:13Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC_1_18_MacProject@614ddd49]" name="afterSuite" is-config="true" duration-ms="99" started-at="2019-01-02T04:10:32Z" finished-at="2019-01-02T04:10:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- testCases.SearchDropDown -->
-      <class name="testCases.TC_1_76_EMAC_price_algorithm">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_76_EMAC_price_algorithm@7d0587f1]" name="beforeMethod" is-config="true" duration-ms="15423" started-at="2018-12-24T21:19:05Z" finished-at="2018-12-24T21:19:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[https://zeus.qa5.vonagenetworks.net]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tc_1_76_EMAC_price_algorithm(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_76_EMAC_price_algorithm@7d0587f1]" name="tc_1_76_EMAC_price_algorithm" duration-ms="85195" started-at="2018-12-24T21:19:21Z" finished-at="2018-12-24T21:20:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc_1_76_EMAC_price_algorithm -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_76_EMAC_price_algorithm@7d0587f1]" name="afterMethod" is-config="true" duration-ms="4217" started-at="2018-12-24T21:20:46Z" finished-at="2018-12-24T21:20:50Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tc_1_76_EMAC_price_algorithm status=SUCCESS method=TC_1_76_EMAC_price_algorithm.tc_1_76_EMAC_price_algorithm(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_76_EMAC_price_algorithm@7d0587f1] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- testCases.TC_1_76_EMAC_price_algorithm -->
+      </class> <!-- testCases.TC_1_18_MacProject -->
       <class name="testCases.TC_1_10_ExportChildCustomerList">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_10_ExportChildCustomerList@9660f4e]" name="beforeMethod" is-config="true" duration-ms="12093" started-at="2018-12-24T21:09:45Z" finished-at="2018-12-24T21:09:57Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_10_ExportChildCustomerList@694e1548]" name="beforeMethod" is-config="true" duration-ms="12307" started-at="2019-01-02T03:56:47Z" finished-at="2019-01-02T03:56:59Z">
           <params>
             <param index="0">
               <value>
@@ -151,22 +151,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tc_1_10_ExportChildCustomerList(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_10_ExportChildCustomerList@9660f4e]" name="tc_1_10_ExportChildCustomerList" duration-ms="42401" started-at="2018-12-24T21:09:57Z" finished-at="2018-12-24T21:10:39Z">
+        <test-method status="PASS" signature="tc_1_10_ExportChildCustomerList(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_10_ExportChildCustomerList@694e1548]" name="tc_1_10_ExportChildCustomerList" duration-ms="28514" started-at="2019-01-02T03:56:59Z" finished-at="2019-01-02T03:57:28Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
+                <![CDATA[org.testng.TestRunner@1187c9e8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_1_10_ExportChildCustomerList -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_10_ExportChildCustomerList@9660f4e]" name="afterMethod" is-config="true" duration-ms="3640" started-at="2018-12-24T21:10:39Z" finished-at="2018-12-24T21:10:43Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_10_ExportChildCustomerList@694e1548]" name="afterMethod" is-config="true" duration-ms="1102" started-at="2019-01-02T03:57:28Z" finished-at="2019-01-02T03:57:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tc_1_10_ExportChildCustomerList status=SUCCESS method=TC_1_10_ExportChildCustomerList.tc_1_10_ExportChildCustomerList(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_10_ExportChildCustomerList@9660f4e] output={null}]]]>
+                <![CDATA[[TestResult name=tc_1_10_ExportChildCustomerList status=SUCCESS method=TC_1_10_ExportChildCustomerList.tc_1_10_ExportChildCustomerList(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_10_ExportChildCustomerList@694e1548] output={null}]]]>
               </value>
             </param>
           </params>
@@ -174,8 +174,8 @@
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- testCases.TC_1_10_ExportChildCustomerList -->
-      <class name="testCases.TC_1_100_Sales_Order_Edit">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_100_Sales_Order_Edit@67205a84]" name="beforeMethod" is-config="true" duration-ms="16331" started-at="2018-12-24T21:17:02Z" finished-at="2018-12-24T21:17:18Z">
+      <class name="testCases.TC_1_32_AgentCreateReassignTicketsfromHelpSpot">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_32_AgentCreateReassignTicketsfromHelpSpot@131276c2]" name="beforeMethod" is-config="true" duration-ms="10224" started-at="2019-01-02T03:59:09Z" finished-at="2019-01-02T03:59:19Z">
           <params>
             <param index="0">
               <value>
@@ -191,22 +191,102 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tc_1_100_Sales_Order_Edit(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_100_Sales_Order_Edit@67205a84]" name="tc_1_100_Sales_Order_Edit" duration-ms="103890" started-at="2018-12-24T21:17:18Z" finished-at="2018-12-24T21:19:02Z">
+        <test-method status="PASS" signature="tc_1_32_AgentCreateReassignTicketsfromHelpSpot(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_32_AgentCreateReassignTicketsfromHelpSpot@131276c2]" name="tc_1_32_AgentCreateReassignTicketsfromHelpSpot" duration-ms="191883" started-at="2019-01-02T03:59:19Z" finished-at="2019-01-02T04:02:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
+                <![CDATA[org.testng.TestRunner@1187c9e8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_1_32_AgentCreateReassignTicketsfromHelpSpot -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_32_AgentCreateReassignTicketsfromHelpSpot@131276c2]" name="afterMethod" is-config="true" duration-ms="1181" started-at="2019-01-02T04:02:31Z" finished-at="2019-01-02T04:02:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc_1_32_AgentCreateReassignTicketsfromHelpSpot status=SUCCESS method=TC_1_32_AgentCreateReassignTicketsfromHelpSpot.tc_1_32_AgentCreateReassignTicketsfromHelpSpot(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_32_AgentCreateReassignTicketsfromHelpSpot@131276c2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testCases.TC_1_32_AgentCreateReassignTicketsfromHelpSpot -->
+      <class name="testCases.TC_1_2_ReportHighLevelFunctionality_ReportsDropDown">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_2_ReportHighLevelFunctionality_ReportsDropDown@1f554b06]" name="beforeMethod" is-config="true" duration-ms="12373" started-at="2019-01-02T03:46:00Z" finished-at="2019-01-02T03:46:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://zeus.qa5.vonagenetworks.net]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tc_1_2_ReportHighLevelFunctionality(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_2_ReportHighLevelFunctionality_ReportsDropDown@1f554b06]" name="tc_1_2_ReportHighLevelFunctionality" duration-ms="633596" started-at="2019-01-02T03:46:12Z" finished-at="2019-01-02T03:56:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1187c9e8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_1_2_ReportHighLevelFunctionality -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_2_ReportHighLevelFunctionality_ReportsDropDown@1f554b06]" name="afterMethod" is-config="true" duration-ms="1204" started-at="2019-01-02T03:56:46Z" finished-at="2019-01-02T03:56:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc_1_2_ReportHighLevelFunctionality status=SUCCESS method=TC_1_2_ReportHighLevelFunctionality_ReportsDropDown.tc_1_2_ReportHighLevelFunctionality(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_2_ReportHighLevelFunctionality_ReportsDropDown@1f554b06] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testCases.TC_1_2_ReportHighLevelFunctionality_ReportsDropDown -->
+      <class name="testCases.TC_1_100_Sales_Order_Edit">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_100_Sales_Order_Edit@1c3a4799]" name="beforeMethod" is-config="true" duration-ms="11637" started-at="2019-01-02T03:57:29Z" finished-at="2019-01-02T03:57:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://zeus.qa5.vonagenetworks.net]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tc_1_100_Sales_Order_Edit(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_100_Sales_Order_Edit@1c3a4799]" name="tc_1_100_Sales_Order_Edit" duration-ms="87120" started-at="2019-01-02T03:57:40Z" finished-at="2019-01-02T03:59:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1187c9e8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_1_100_Sales_Order_Edit -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_100_Sales_Order_Edit@67205a84]" name="afterMethod" is-config="true" duration-ms="3086" started-at="2018-12-24T21:19:02Z" finished-at="2018-12-24T21:19:05Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_100_Sales_Order_Edit@1c3a4799]" name="afterMethod" is-config="true" duration-ms="1026" started-at="2019-01-02T03:59:08Z" finished-at="2019-01-02T03:59:09Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tc_1_100_Sales_Order_Edit status=SUCCESS method=TC_1_100_Sales_Order_Edit.tc_1_100_Sales_Order_Edit(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_100_Sales_Order_Edit@67205a84] output={null}]]]>
+                <![CDATA[[TestResult name=tc_1_100_Sales_Order_Edit status=SUCCESS method=TC_1_100_Sales_Order_Edit.tc_1_100_Sales_Order_Edit(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_100_Sales_Order_Edit@1c3a4799] output={null}]]]>
               </value>
             </param>
           </params>
@@ -214,8 +294,8 @@
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- testCases.TC_1_100_Sales_Order_Edit -->
-      <class name="testCases.TC_1_77_EICB_Queue">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_77_EICB_Queue@5d76b067]" name="beforeMethod" is-config="true" duration-ms="13540" started-at="2018-12-24T21:20:50Z" finished-at="2018-12-24T21:21:03Z">
+      <class name="testCases.TC_1_41_Configur_Project_Components">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_41_Configur_Project_Components@71bbf57e]" name="beforeMethod" is-config="true" duration-ms="11095" started-at="2019-01-02T04:07:15Z" finished-at="2019-01-02T04:07:26Z">
           <params>
             <param index="0">
               <value>
@@ -231,151 +311,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tc_1_77_eICB_Queue(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_77_EICB_Queue@5d76b067]" name="tc_1_77_eICB_Queue" duration-ms="23507" started-at="2018-12-24T21:21:03Z" finished-at="2018-12-24T21:21:27Z">
+        <test-method status="PASS" signature="tC_1_41_Configur_Project_Components(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_41_Configur_Project_Components@71bbf57e]" name="tC_1_41_Configur_Project_Components" duration-ms="184521" started-at="2019-01-02T04:07:26Z" finished-at="2019-01-02T04:10:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
+                <![CDATA[org.testng.TestRunner@1187c9e8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc_1_77_eICB_Queue -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_77_EICB_Queue@5d76b067]" name="afterMethod" is-config="true" duration-ms="3334" started-at="2018-12-24T21:21:27Z" finished-at="2018-12-24T21:21:30Z">
+        </test-method> <!-- tC_1_41_Configur_Project_Components -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_41_Configur_Project_Components@71bbf57e]" name="afterMethod" is-config="true" duration-ms="970" started-at="2019-01-02T04:10:31Z" finished-at="2019-01-02T04:10:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tc_1_77_eICB_Queue status=SUCCESS method=TC_1_77_EICB_Queue.tc_1_77_eICB_Queue(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_77_EICB_Queue@5d76b067] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- testCases.TC_1_77_EICB_Queue -->
-      <class name="testCases.TC_1_56_TicketMergeVerification">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_56_TicketMergeVerification@5a8806ef]" name="beforeMethod" is-config="true" duration-ms="15353" started-at="2018-12-24T21:10:43Z" finished-at="2018-12-24T21:10:58Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[https://zeus.qa5.vonagenetworks.net]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tc_1_56_TicketMergeVerification(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_56_TicketMergeVerification@5a8806ef]" name="tc_1_56_TicketMergeVerification" duration-ms="266484" started-at="2018-12-24T21:10:58Z" finished-at="2018-12-24T21:15:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc_1_56_TicketMergeVerification -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_56_TicketMergeVerification@5a8806ef]" name="afterMethod" is-config="true" duration-ms="3012" started-at="2018-12-24T21:15:25Z" finished-at="2018-12-24T21:15:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tc_1_56_TicketMergeVerification status=SUCCESS method=TC_1_56_TicketMergeVerification.tc_1_56_TicketMergeVerification(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_56_TicketMergeVerification@5a8806ef] output={null}]]]>
+                <![CDATA[[TestResult name=tC_1_41_Configur_Project_Components status=SUCCESS method=TC_1_41_Configur_Project_Components.tC_1_41_Configur_Project_Components(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_41_Configur_Project_Components@71bbf57e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testCases.TC_1_56_TicketMergeVerification -->
-      <class name="testCases.TC_1_58_VerifyUserAbleToViewUsageHistory">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_58_VerifyUserAbleToViewUsageHistory@6c49835d]" name="beforeMethod" is-config="true" duration-ms="14454" started-at="2018-12-24T21:15:28Z" finished-at="2018-12-24T21:15:42Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[https://zeus.qa5.vonagenetworks.net]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tc_1_58_VerifyUserAbleToViewUsageHistory(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_58_VerifyUserAbleToViewUsageHistory@6c49835d]" name="tc_1_58_VerifyUserAbleToViewUsageHistory" duration-ms="35018" started-at="2018-12-24T21:15:42Z" finished-at="2018-12-24T21:16:17Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc_1_58_VerifyUserAbleToViewUsageHistory -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_58_VerifyUserAbleToViewUsageHistory@6c49835d]" name="afterMethod" is-config="true" duration-ms="2871" started-at="2018-12-24T21:16:17Z" finished-at="2018-12-24T21:16:20Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tc_1_58_VerifyUserAbleToViewUsageHistory status=SUCCESS method=TC_1_58_VerifyUserAbleToViewUsageHistory.tc_1_58_VerifyUserAbleToViewUsageHistory(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_58_VerifyUserAbleToViewUsageHistory@6c49835d] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- testCases.TC_1_58_VerifyUserAbleToViewUsageHistory -->
-      <class name="testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@4f063c0a]" name="beforeMethod" is-config="true" duration-ms="22862" started-at="2018-12-24T21:22:12Z" finished-at="2018-12-24T21:22:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[https://zeus.qa5.vonagenetworks.net]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tC_1_80_Verify2NewGroupsUnderGroups_TicketPage(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@4f063c0a]" name="tC_1_80_Verify2NewGroupsUnderGroups_TicketPage" duration-ms="90563" started-at="2018-12-24T21:22:35Z" finished-at="2018-12-24T21:24:06Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tC_1_80_Verify2NewGroupsUnderGroups_TicketPage -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@4f063c0a]" name="afterMethod" is-config="true" duration-ms="7508" started-at="2018-12-24T21:24:06Z" finished-at="2018-12-24T21:24:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tC_1_80_Verify2NewGroupsUnderGroups_TicketPage status=SUCCESS method=TC_1_80_Verify2NewGroupsUnderGroups_TicketPage.tC_1_80_Verify2NewGroupsUnderGroups_TicketPage(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage@4f063c0a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage -->
+      </class> <!-- testCases.TC_1_41_Configur_Project_Components -->
       <class name="testCases.TC_1_52_DIDs_Displayed_Number_Activation">
-        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_52_DIDs_Displayed_Number_Activation@5e853265]" name="beforeMethod" is-config="true" duration-ms="12203" started-at="2018-12-24T21:16:20Z" finished-at="2018-12-24T21:16:32Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC_1_52_DIDs_Displayed_Number_Activation@3fd7a715]" name="beforeMethod" is-config="true" duration-ms="12493" started-at="2019-01-02T04:02:58Z" finished-at="2019-01-02T04:03:11Z">
           <params>
             <param index="0">
               <value>
@@ -391,22 +351,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tC_1_52_DIDs_Displayed_Number_Activation(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_52_DIDs_Displayed_Number_Activation@5e853265]" name="tC_1_52_DIDs_Displayed_Number_Activation" duration-ms="25378" started-at="2018-12-24T21:16:32Z" finished-at="2018-12-24T21:16:58Z">
+        <test-method status="PASS" signature="tC_1_52_DIDs_Displayed_Number_Activation(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_52_DIDs_Displayed_Number_Activation@3fd7a715]" name="tC_1_52_DIDs_Displayed_Number_Activation" duration-ms="12708" started-at="2019-01-02T04:03:11Z" finished-at="2019-01-02T04:03:24Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3adcc812]]>
+                <![CDATA[org.testng.TestRunner@1187c9e8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tC_1_52_DIDs_Displayed_Number_Activation -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_52_DIDs_Displayed_Number_Activation@5e853265]" name="afterMethod" is-config="true" duration-ms="4148" started-at="2018-12-24T21:16:58Z" finished-at="2018-12-24T21:17:02Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC_1_52_DIDs_Displayed_Number_Activation@3fd7a715]" name="afterMethod" is-config="true" duration-ms="991" started-at="2019-01-02T04:03:24Z" finished-at="2019-01-02T04:03:25Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tC_1_52_DIDs_Displayed_Number_Activation status=SUCCESS method=TC_1_52_DIDs_Displayed_Number_Activation.tC_1_52_DIDs_Displayed_Number_Activation(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_52_DIDs_Displayed_Number_Activation@5e853265] output={null}]]]>
+                <![CDATA[[TestResult name=tC_1_52_DIDs_Displayed_Number_Activation status=SUCCESS method=TC_1_52_DIDs_Displayed_Number_Activation.tC_1_52_DIDs_Displayed_Number_Activation(org.testng.ITestContext)[pri:0, instance:testCases.TC_1_52_DIDs_Displayed_Number_Activation@3fd7a715] output={null}]]]>
               </value>
             </param>
           </params>

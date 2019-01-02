@@ -51,15 +51,6 @@ public class TC_1_12_Number_management_Search_customerForEdit extends
 		waitForElementPresent(searchTextBox, 300);
 		type(searchTextBox, customer_name, "Search Box");
 		type(searchTextBox, Customer_search, Keys.ENTER);
-		waitForElementPresent(customerTableHeadline, 300);
-
-		if (verifyElementText(customerTableHeadline, CustomerTxt1)) {
-			verifyTextInColumnClickOtherColumn(customerNameList, customerName,
-					customer_name);
-			Thread.sleep(1000);
-			actionsClick(customerNameList);
-		}
-		waitForElementPresent(customer_dashboard_name, 300);
 		
 		isassert = verifyText(customer_dashboard_name, CustomerTxt2,"Customer Name");
 		softassert.assertEquals(isassert, true, "Verified customer id "+CustomerTxt2+" in customer table");
@@ -79,7 +70,7 @@ public class TC_1_12_Number_management_Search_customerForEdit extends
 			Thread.sleep(1000);
 			actionsClick(customer_dashboard_notification_voice_number_penIcons_subList);
 		}
-
+		Thread.sleep(5000);
 		waitForElementPresent(voice_number_penIcons_customer_shippingAddress_DD_edit, 300);
 		actionsClick(voice_number_penIcons_customer_shippingAddress_DD_edit);
 		Thread.sleep(7000);

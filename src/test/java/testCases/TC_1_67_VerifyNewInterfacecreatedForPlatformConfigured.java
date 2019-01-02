@@ -113,7 +113,7 @@ public class TC_1_67_VerifyNewInterfacecreatedForPlatformConfigured extends Medi
 		actionsClick(voice_notificationBroadWorks_platform_configuration_saveBtn_successPopUp);
 		//verifying dash board 
 		// failing here - need discussion 
-		waitForElementPresent(customerHome_dashBoard, 200);
+		waitForElementPresent(customerHome_dashBoard, 300);
 		aJSClick(customerHome_dashBoard,"customerHome_DashBoard");
 		waitForElementPresent(customerHome_dashBoard_broadSoftCluster, 20);
 		String valueDisplayed=getDropdownSelectedValue(customerHome_dashBoard_broadSoftCluster);

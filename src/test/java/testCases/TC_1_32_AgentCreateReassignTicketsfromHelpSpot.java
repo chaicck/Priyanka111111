@@ -74,10 +74,10 @@ public class TC_1_32_AgentCreateReassignTicketsfromHelpSpot extends
 		waitForElementPresent(searchTextBox, 300);
 		type(searchTextBox, customer_id, "Search Box");
 		type(searchTextBox, searchText, Keys.ENTER);
-		if (verifyElementText(customerTableHeadline, cutomerTxt1)) {
+		/*if (verifyElementText(customerTableHeadline, cutomerTxt1)) {
 			verifyTextInColumnClickOtherColumn(customerIdList, customerName,
 					customer_id);
-		}
+		}*/
 		waitForElementPresent(customer_dashboard_name, 300);
 		isassert = verifyText(customer_dashboard_name, cutomerTxt2, "Customer Name");
 		softassert.assertEquals(isassert, true, "Verify_customer name text");
@@ -134,12 +134,12 @@ public class TC_1_32_AgentCreateReassignTicketsfromHelpSpot extends
 		type(srchTxt, customer_id, "Search box");
 		type(srchTxt, "Search box", Keys.ENTER);
 
-		if (verifyElementText(customerTableHeadline, cutomerTxt1)) {
+		/*if (verifyElementText(customerTableHeadline, cutomerTxt1)) {
 			verifyTextInColumnClickOtherColumn(customerIdList, customerName,
 					customer_id);
 		}
 		isassert = verifyText(customer_dashboard_name, cutomerTxt2, "Customer Name");
-		softassert.assertEquals(isassert, true, "Verify customer name");
+		softassert.assertEquals(isassert, true, "Verify customer name");*/
 		
 		Thread.sleep(300);
 		scrollElementIntoView(customer_dashboard_contacts_addTicket);
