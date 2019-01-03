@@ -2,7 +2,6 @@ package demo.objectrepository;
 
 public interface OR_Admin {
 	
-	//String agent_portal="id=notification-agent-portal";
 	String agent_portal="id=notification-agent-portal";
 	String automation="id=notification-automation";
 	String c3_admin="id=notification-c3-admin";
@@ -38,7 +37,7 @@ public interface OR_Admin {
 	String agent_portal_users="id=notification-users";
 	String agent_portal_videos="id=notification-videos";
 	
-	String agent_portal_headline="xpath=//div[@class='container']/h1";
+	String agent_portal_headline="xpath=/html/body/div[2]/div/h1";
 	
 	String automation_automation_log="id=notification-automation-log";
 	String automation_automation_report="id=notification-automation-report";
@@ -303,27 +302,5 @@ String admin_nexmo_managePremier_successMsg="xpath=//*[@id='alert_placeholder']/
 String admin_nexmo_managePremier_import_numberRange_startNo="id=tn_start";
 String admin_nexmo_managePremier_import_numberRange_endNo="id=tn_end";
 String admin_nexmo_managePremier_export="id=export-link";	
-	//bulk circuit
-	String username = System.getProperty("user.name");	
-	String loc = "C:\\Users\\"+username+"\\Downloads";
-	String upload = "id=csv_file";
-	String dryRun = "id=dry_run";
-	String dryRun_msg = "xpath=(//label[@for='csv_file'])[2]";
-	String importt = "id=import";
-	String dryRun_warningMsg = "xpath=//div[@class='alert-danger alert-error']";
-	String dry_run = "xpath=//input[@name='Dry Run']";
-	String import_process = "xpath=//input[@name='process']";
-	String name = "xpath=//*[@id='define_columns']/table/tbody/tr[2]/td[1]";
-	String fromInterface = "xpath=//*[@id='define_columns']/table/tbody/tr[2]/td[2]";
-	String toDevice = "xpath=//*[@id='define_columns']/table/tbody/tr[2]/td[3]";
-	String toInterface = "xpath=//*[@id='define_columns']/table/tbody/tr[2]/td[4]";
-	String customerId = "xpath=//*[@id='define_columns']/table/tbody/tr[2]/td[5]";
-	String circuitId = "xpath=//*[@id='define_columns']/table/tbody/tr[2]/td[6]";
-	String BulkMigrate_header = "xpath=//a[@href='/circuit/bulkMigrate']";
-	String importError = "className=has-error";
-	String Bulkcircuitprocessheader = "xpath=//label[text()='THIS ONLY UPDATES MONITORING!']";
-	String Bulkcircuite_process = "xpath=(//input[@name='process'])[2]";
-	
-
 
 }

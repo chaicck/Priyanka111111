@@ -3,7 +3,7 @@ package demo.objectrepository;
 
 public interface OR_HomePage {
 
-	String homeBtnDdd = "css=span[id='notification-home'] span[class='hidden-md hidden-sm hidden-xs']";
+	String homeBtnDd = "css=span[id='notification-home'] span[class='hidden-md hidden-sm hidden-xs']";
     String customerInfoLnk = "css=span[id='notification-customer-information']";
     String dashboardLnk = "css=span[id='notification-dashboard']";
     String clientConfCallLnk = "css=span[id='notification-client-configuration-call']";
@@ -36,7 +36,7 @@ public interface OR_HomePage {
     String macDetailsSaveButton="xpath=//button[contains(text(),'Save')]";
     String macOkButton="xpath=//button[text()='OK']";
     String deleteButton="xpath=//a[text()='Delete Mapping']";
-    String addMacLink="xpath=(//a[@class='btn btn-sm btn-info pull-right'])[4]";
+    String addMacLink="xpath=//(//a[@class='btn btn-sm btn-info pull-right'])[4]";
     String addMacNameTextBox="xpath=//label[contains(text(),'PCAT')]/..//input[@type='text']";
     String addMacNameDropDown="xpath=//label[contains(text(),'PCAT')]/..//span";
     
@@ -88,32 +88,8 @@ public interface OR_HomePage {
 
     String customerDashboard_customerLink="xpath=(//a[starts-with(@href,'/customer/view/customer_id')])[3]";
     String customerDashboard_customerLink_exportChildCustomers="xpath=//a[@class='btn btn-sm btn-success pull-right']";
-//Portal user
-    String checked="btn-checked";
-   String prortaluserLink =  "id=notification-portal-users";
-   String prortaluserLink_call_file = "id=cdr-ftp-button";
-   String prortaluserLink_call_FTP  = "id=cdr-sftp-button";
-   String prortaluserLink_call_account = "xpath=//button[@data-name='cdr']";
-   String prortaluserLink_Manage_SFTP_Credentials = "id=cdr-sftp-credentials-button";
-   String prortaluserLink_Manage_SFTP_Credentials_username = "xpath=//input[@name='username']";
-   String prortaluserLink_Manage_SFTP_Credentials_hostname = "xpath=//input[@name='hostname']";
-   String prortaluserLink_Manage_SFTP_Credentials_port =  "xpath=//input[@name='port']";
-   String prortaluserLink_Manage_SFTP_Credentials_folder = "xpath=//input[@name='folder']";
-   String prortaluserLink_Manage_SFTP_Credentials_password = "xpath=//input[@name='password']";
-   String prortaluserLink_Manage_SFTP_Credentials_save = "xpath=//button[@id='btn-save']";
-   String prortaluserLink_Manage_SFTP_Credentials_cancle =   "xpath=//button[@name='cancel']";
-   String prortaluserLink_Manage_SFTP_Credentials_windowclose_X =   "xpath=//a[@class='close']";   
-   String prortaluserLink_Manage_SFTP_Credentials_rsakey ="xpath=//textarea[@name='rsaKey']";
-   String prortaluserLink_Manage_SFTP_Credentials_passwordradiobutton = "xpath=//input[@id='byPassword']";
-   String prortaluserLink_Manage_SFTP_Credentials_RSAradiobutton = "xpath=//input[@id='byRsaKey']";
-   String prortaluserLink_Manage_SFTP_Credentials_compress = "xpath=//button[@name='compress']";
-   String prortaluserLink_Manage_SFTP_Credentials_md5file = "xpath=//button[@name='md5_file']";
-   String prortaluserLink_Manage_SFTP_Credentials_savedsucessfullymessage = "xpath=//span[text()='SFTP credentials successfully updated']";
- 
-	String reconExceptionReport = "xpath=//a[@href='/recon/exceptionReport/']";
-	String reconreport = "xpath=//h1[text()='Daily Recon Exception Report']";
-	String recongraph = "xpath=//h1[text()='Recon Exception Aging Graph']";
- 
+
+
     
 		}
 

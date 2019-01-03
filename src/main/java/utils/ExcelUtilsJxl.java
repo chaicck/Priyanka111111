@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class ExcelUtilsJxl {
-//This method is to get Excel Data
+
     public static LinkedHashMap<String,String> getExcelData(String fileName, String sheetName,String testCaseID){
         LinkedHashMap<String,String> testData= new LinkedHashMap<String,String>();
         ArrayList<String> key=new ArrayList<>();
@@ -48,7 +48,7 @@ public class ExcelUtilsJxl {
         }
         return testData;
     }
-//This method is to get test data from excel
+
     public static Object[][]  getTestData(String fileName, String sheetName){
         String[][] tabArray = null;
         try{

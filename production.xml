@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ZeusAutomation" configfailurepolicy="continue" verbose="10">
+	<test name="WholeTestSuit-all-packages">
+		<parameter name="baseUrl" value="https://zeus.telesphere.com/"/>
+		<parameter name="browser" value="chrome" />
+		<!-- 
+		<class name="Zeus_healthcheck.Customer_Search"/>
+			<class name="Zeus_healthcheck.Number_search"/>
+			    
+		-->
+	<classes>	
+	
+	
+				<class name="Zeus_healthcheck.Customer_Search"/>
+			    
+		
+		</classes>
+	</test>
+</suite>
+

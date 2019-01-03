@@ -2,6 +2,7 @@ package demo.objectrepository;
 
 public interface OR_SearchPage {
 	
+    String srchTxt = "css=input#search";
     String search_inventorySearchbox="xpath=(//input[@name='search'])[2]";
     String firstParentIdLnk = "xpath=(//table[@id='customer_table']/tbody/tr)[1]/td[8]/a";
 
@@ -18,18 +19,6 @@ public interface OR_SearchPage {
     
     //NumberSearch
     String numberSearch_active_code_info_table="xpath=//a[@href='#nnacl']";
-	String pageHeader="className=clearfix";
-	String search_number_portabilitySearch="xpath=//a[@href='/tn/portCheckMulti']";
-	String search_number_inventorySearch="xpath=//a[@href='/tn/searchMulti']";
-	String search_number_inventorySearch_searchTextBox="id=search";
-	String search_number_inventorySearch_searchBtn="xpath=(//button[@type='submit'])[2]";
-	String search_number_inventorySearch_tableNumbers="xpath=//*[@id='number_table']/tbody/tr/td[1]/a";
-	String search_number_inventorySearch_customerParametarised="xpath=//*[@id='number_table']/tbody/tr[%s]/td[2]";
-	
-	String search_number_PortabilitySearch_table_NPA="xpath=//*[@id='number_table']/tbody/tr/td[1]";
-	String search_number_PortabilitySearch_table_NPA_parametarised="xpath=//*[@id='number_table']/tbody/tr[%s]/td[1]";
-	String search_number_PortabilitySearch_table_NXX_parametarised="xpath=//*[@id='number_table']/tbody/tr[%s]/td[2]";
-	
     
     //ContractSearch
     String orderNumberValue="xpath=//div[@class='modal-body']/div/div/dl/dd";
@@ -114,12 +103,11 @@ public interface OR_SearchPage {
     String billing_addCustomerCredit_form_invoice_DD="id=InvoiceNumber";
     String billing_addCustomerCredit_form_creditType_DD="id=BillingCreditServiceType";
     String billing_addCustomerCredit_form_ticketNumber="id=TicketNumber";
-    String billing_addCustomerCredit_form_CreditReason_DD="name=data[CreditReason]";
+    String billing_addCustomerCredit_form_CreditReason_DD="id=CreditReason";
     String billing_addCustomerCredit_form_CreditTaxable_DD="id=CreditTaxable";
     String billing_addCustomerCredit_form_CreditNotes="id=CreditNotes";
     String billing_addCustomerCredit_form_CreditAmount="id=CreditAmount";
     String billing_addCustomerCredit_form_save_Btn="xpath=//button[@form='credit-request-save']";
-    
     
     String billing_addCustomerCredit_successMsg="xpath=//div[@class='alert alert-success alert-dismissable']/div";
     
@@ -131,8 +119,6 @@ public interface OR_SearchPage {
     String billing_credit_request_amountFromTable="xpath=//*[@id='credit-request-table']/tbody/tr/td[11]";
     String billing_credit_request_ticketFromTable="xpath=//*[@id='credit-request-table']/tbody/tr/td[4]";
     String billing_credit_request_creditIdFromTable="xpath=//*[@id='credit-request-table']/tbody/tr[%s]/td[1]/a";
-    
-    
     
     String billing_addCustomerCredit_form_approvedAmount="id=ApprovedAmount";
     String billing_addCustomerCredit_editForm_save_confirm="xpath=//button[@name='approval[save]']";

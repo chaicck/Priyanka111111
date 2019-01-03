@@ -8,7 +8,7 @@ public interface OR_Reports {
 	 String Reports_projectByPM_headline="xpath=//div[@class='container-fluid']";
 	 String Reports_projectByVP_headline="xpath=//*[@id='header_crumbs']/li[3]";
 	 
-	 String Reports_projectByVP_dropDown="xpath=//div[@id='views_chosen']/a";
+	 String Reports_projectByVP_dropDown="id=views_chosen";
 	 String Reports_projectByVP_dropDownMenuList="xpath=//ul[@class='chosen-results']/li";
 	 String Reports_projectByVP_dropDownOption="xpath=//ul[@class='chosen-results']/li[3]";
 	 
@@ -34,7 +34,6 @@ public interface OR_Reports {
 	    
 	    String reports_projectBtPM_1stProjectInTableMagnifier="xpath=//*[@id='project_table']/tbody/tr[1]/td[1]/a[1]/i";
 	    String reports_projectBtPM_projectViewEditPage_headLine="xpath=//h1[@class='panel-title']";
-	    String reports_projectBtPM_projectViewEditPage_Projectname_DD ="id=project_type_name";
 	    String reports_projectBtPM_projectViewEditPage_addTask="xpath=//a[starts-with(@href,'/project/addTaskModal/project_id')]";
 	    String reports_projectBtPM_projectViewEditPage_taskNamesTable="xpath=//*[@id='project_tasks']/tbody/tr/td[2]/a";
 	    
@@ -42,8 +41,6 @@ public interface OR_Reports {
 	    
 	    String reports_projectBtPM_projectViewEditPage_addTask_taskSelection_DD="id=system_task_select_chosen";
 	    String reports_projectBtPM_projectViewEditPage_addTask_taskSelection_DD_searchBox="xpath=(//input[@type='text'])[2]";
-	   
-	  
 	    String reports_projectBtPM_projectViewEditPage_addTask_taskSelection_DD_searchBox_result="xpath=//*[@id='system_task_select_chosen']/div/ul/li";
 	    String reports_projectBtPM_projectViewEditPage_addTask_taskSelection_DD_searchBox_addNewTaskToPrjctBtn="xpath=//button[@class='btn btn-sm btn-primary']";
 	    String taskAddSuccessMsg="xpath=//*[@id='basic_modal']/div/div/div[2]/div/span";
@@ -69,7 +66,7 @@ public interface OR_Reports {
 	    String reports_projectBtPM_ProjectManager_DD_allOpenProjects="xpath=(//ul[@class='chosen-results']/li)[2]";       
 	    
 	
-	String reports_customers="id=notification-customers";    
+	String reports_customers="id=notification-customers";
 	String reports_reconciliation="id=notification-reconciliation";
 	
 	
@@ -130,7 +127,7 @@ public interface OR_Reports {
  	String Report_Circuits="xpath=//a[@href='/circuit/reports/']";	
  	String Report_Circuits_CircuitCost="xpath=//a[@href='/circuit/reportCircuitCost/']";
  	String Report_Circuits_quoteLookup="xpath=//a[@href='/circuitQuote/quoteLookup/']";
- 	String Report_Circuits_circuitQuotes="Report_Circuits_circuittool";
+ 	String Report_Circuits_circuitQuotes="xpath=//a[@href='/reports/circuitQuotes/']";
  	String Report_Circuits_reportInactive="xpath=//a[@href='/circuit/reportInactive/']";
  	String Report_Circuits_reportHidden="xpath=//a[@href='/circuit/reportHidden/']";
  	String Report_Circuits_reportNoContract="xpath=//a[@href='/circuit/reportNoContract/']";

@@ -20,7 +20,7 @@ public interface OR_Voice {
 	String voice_notification_faxmail_recipients_Table="xpath=//*[@id='user_table']/tbody/tr/td[3]";
 	String voice_notification_faxmail_successMsgAccept="xpath=//button[@class='btn btn-default center-block']";
 
-	String voice_notificationBroadWorks="xpath=(//span[@id='notification-broadworks'])[2]";		
+	String voice_notificationBroadWorks="id=notification-broadworks";		
 	String voice_notificationBroadWorks_platform_configuration="xpath=(//*[@id='notification-platform-configuration'])[2]";
 	String voice_notificationBroadWorks_platform_configuration_nameLabel="xpath=(((//div[@class='row'])[2]/div/div/label)[1])[1]";
 	String voice_notificationBroadWorks_platform_configuration_codeLabel="xpath=((//div[@class='row'])[2]/div/div/label)[2]";

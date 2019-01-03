@@ -23,7 +23,7 @@ public class WriteToExcel {
 	static Sheet sheet;
 	static int i;
 	
-	//This method is to initialize excel
+	
 	public static void intialiseExcel(String filePath) throws EncryptedDocumentException, InvalidFormatException, IOException{
 		filelocation=filePath;
     inputStream = new FileInputStream(new File(filePath));
@@ -31,7 +31,7 @@ public class WriteToExcel {
      sheet = workbook.createSheet(toDaysdate()); 
     }
 	
-	//This method is to write initialize excel
+	
 	public static void writeExcel( String data) {
 		
 		 String[]texts = data.split(";");
@@ -45,7 +45,7 @@ public class WriteToExcel {
 	      
 	}
 	
-	//This method is to close Excel conncetion
+	
 	public static void closeExcelConnection() throws IOException{
 		
 		inputStream.close();
