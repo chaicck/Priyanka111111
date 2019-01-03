@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -57,7 +56,7 @@ import utils.ExcelUtils;
 import demo.objectrepository.OR_Portal_users;
 
 public class CommonReusables extends ActionEngine implements OR_LoginPage,
-		OR_CustInfo, OR_Logout, OR_Portal_users {
+		 OR_Logout {
 	Alert alert;
 	private String sTestCaseName;
 	private int iTestCaseRow;
@@ -183,22 +182,22 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 
 	}
 
-	/**
-	 * This method is useful to wait for element by refreshing the browser for
-	 * stipulated time period
-	 */
-
-	public void waitForTextPresentByBrowerRefresh(String string, int sec, int no)
-			throws InterruptedException {
-		for (int i = 0; i < no; i++) {
-			Thread.sleep((sec * 1000));
-			refreshBrowser();
-			if (verifyElementText(billing_contracts_contractIdList, "")) {
-				break;
-			}
-		}
-
-	}
+//	/**
+//	 * This method is useful to wait for element by refreshing the browser for
+//	 * stipulated time period
+//	 */
+//
+//	public void waitForTextPresentByBrowerRefresh(String string, int sec, int no)
+//			throws InterruptedException {
+//		for (int i = 0; i < no; i++) {
+//			Thread.sleep((sec * 1000));
+//			refreshBrowser();
+//			if (verifyElementText(billing_contracts_contractIdList, "")) {
+//				break;
+//			}
+//		}
+//
+//	}
 
 	/**
 	 * This method is used return current url where scripts are executed
@@ -230,7 +229,27 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		click(reCusTableTr + OR_SearchPage.invoicesAndPayMentsLnk,
 				"Invoice And Payments button");
 	}
+	/*@AfterMethod(alwaysRun = true, enabled = true)
+	public void afterMethod(ITestResult result) throws Throwable {
 
+		try {
+	        if(result.getStatus()==ITestResult.FAILURE){
+	            logger.log(LogStatus.FAIL,"Failed test is: "+result.getName());
+	            logger.log(LogStatus.FAIL, result.getThrowable());
+//	            logger.log(LogStatus.FAIL, logger.addScreenCapture(capture(Driver, "screenShot")));
+	        }
+	        else if(result.getStatus()==ITestResult.SKIP){
+	            logger.log(LogStatus.SKIP,"Skipped test is: "+result.getName());
+	        } 
+	    	}
+	     
+	        finally {	
+	        extent.endTest(logger);
+	        extentTestEndflag=true;
+	        extent.flush();
+	    	Driver.quit();
+	        }
+	}*/
 	/**
 	 * This method is used to select records where Billing status & Account
 	 * status are in Active status and click on respective Dollar icon & then
@@ -302,20 +321,20 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		return format.format(cal.getTime());
 	}
 
-	/**
-	 * This method is used to perform 'login as' functionality for the user
-	 * provided
-	 */
-	public void selectUser(String userName) throws Throwable {
-		List<WebElement> cusTable = getAllElements(portalUsersTotalRecords);
-		for (int i = 1; i <= cusTable.size(); i++) {
-			String reCusTableTr = String.format(portalUsersTr, i);
-			if (getVisibleText(reCusTableTr + userNameTxtPu).equals(userName)) {
-				click(reCusTableTr + loginAsBtn, "Login As");
-				break;
-			}
-		}
-	}
+//	/**
+//	 * This method is used to perform 'login as' functionality for the user
+//	 * provided
+//	 */
+//	public void selectUser(String userName) throws Throwable {
+//		List<WebElement> cusTable = getAllElements(portalUsersTotalRecords);
+//		for (int i = 1; i <= cusTable.size(); i++) {
+//			String reCusTableTr = String.format(portalUsersTr, i);
+//			if (getVisibleText(reCusTableTr + userNameTxtPu).equals(userName)) {
+//				click(reCusTableTr + loginAsBtn, "Login As");
+//				break;
+//			}
+//		}
+//	}
 
 	/**
 	 * This method is used to get the date after n days in required format
@@ -340,8 +359,6 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		try {
 			if (getElement(locator).getText().contains(text)) {
 				flag = true;
-				logger.log(LogStatus.PASS, "Verified Expected text on webpage i.e. '" + text + "'" +"is matching");
-				System.out.println("Verified Expected text on webpage i.e. '" + text + "'" +"is matching");
 			}
 		} catch (NoSuchElementException e) {
 			// TODO: handle exception
@@ -384,27 +401,14 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 	 * This method is used to get the elements associated with same locator into
 	 * LIST & verify the list of texts in a LIST with given list
 	 */
-	public boolean verifyAllListValuesInOrder(String locator, List<String> l)
+	public void verifyAllListValuesInOrder(String locator, List<String> l)
 			throws Throwable {
-		boolean flag = false;
+
 		List<String> list = getAllTheText(locator);
 		for (int i = 0; i < list.size(); i++) {
-			if(list.get(i).contains(l.get(i)))
-			{
-				flag = true;
-				logger.log(LogStatus.PASS,"List of value in order -->"+ list.get(i));
-				System.out.println("List of value in order -->"+ list.get(i));
-			}
-			else
-			{
-				flag = false;
-				logger.log(LogStatus.FAIL,"List of value not in order -->"+ list.get(i));
-				System.out.println("List of value not in order -->"+ list.get(i));
-				logger.log(LogStatus.FAIL,logger.addScreenCapture(capture(Driver, "screenShot")));
-				break;
-			}
+			Assert.assertTrue(list.get(i).contains(l.get(i)));
 		}
-		return flag;
+
 	}
 
 	/**
@@ -638,18 +642,18 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 	/**
 	 * This method is used confirm operation
 	 */
-	public void handsoffConfirmOperations() throws Throwable {
-		List<WebElement> list = getAllElements(handoffConfirmButtons);
-
-		for (int i = 0; i < list.size(); i++) {
-			String element = String.format(handoffConfirmButton, 1);
-			waitForElementPresent(element, 10);
-			scrollElementIntoView(element);
-			JSClick(element);
-			waitForElementPresent(successText, 10);
-			JSClick(okButton);
-		}
-	}
+//	public void handsoffConfirmOperations() throws Throwable {
+//		List<WebElement> list = getAllElements(handoffConfirmButtons);
+//
+//		for (int i = 0; i < list.size(); i++) {
+//			String element = String.format(handoffConfirmButton, 1);
+//			waitForElementPresent(element, 10);
+//			scrollElementIntoView(element);
+//			JSClick(element);
+//			waitForElementPresent(successText, 10);
+//			JSClick(okButton);
+//		}
+//	}
 
 	/**
 	 * This method is used to perform mouseOver operation
@@ -668,7 +672,6 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		try {
 			waitForElementPresent(logoutDd, 20);
 			click(logoutDd, "Logout");
-			Thread.sleep(500);
 			logPass("Successfully clicked on right top Menu");
 			JSClick(logoutBtn);
 			if(readProp("zLogout").trim().contains(getPageTile()))
@@ -702,34 +705,7 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		}
 	}
 
-	/**
-	 * This method is used call after each method execution, if any test cases
-	 * fails, it is used to capture screen shots and finally performs logout
-	 * functionality ends the extent logger & flush the extent results and then
-	 * quit the browser
-	 */
-
-	@AfterMethod(alwaysRun = true, enabled = true)
-	public void afterMethod(ITestResult result) throws Throwable {
-
-		try {
-	        if(result.getStatus()==ITestResult.FAILURE){
-	            logger.log(LogStatus.FAIL,"Failed test is: "+result.getName());
-	            logger.log(LogStatus.FAIL, result.getThrowable());
-//	            logger.log(LogStatus.FAIL, logger.addScreenCapture(capture(Driver, "screenShot")));
-	        }
-	        else if(result.getStatus()==ITestResult.SKIP){
-	            logger.log(LogStatus.SKIP,"Skipped test is: "+result.getName());
-	        } 
-	    	}
-	     
-	        finally {	
-	        extent.endTest(logger);
-	        extentTestEndflag=true;
-	        extent.flush();
-	    	Driver.quit();
-	        }
-	}
+	
 
 	/**
 	 * Used to perform logout functionality navigating to home page based on
@@ -773,7 +749,6 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		if(readProp("zTitle").trim().contains(getPageTile()))
 		{
 			logger.log(LogStatus.PASS, "Login Success : Login into Zeus Successefully");
-			System.out.println("Login Success : Login into Zeus Successefully");
 		}
 		else{
 			System.out.println(readProp("zTitle").trim()+""+getPageTile().trim());
@@ -1117,8 +1092,9 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		return mouseHoverMove(menu,menuText, submenu,menuText);
 		
 	}
-
-	
+	 /** 
+	  * This method is written to do drop-down option records
+	 */
 	@SuppressWarnings("unused")
 	protected boolean verifyDropDownOptionsRespectiveRecordsDisplayed(String queues_billing_showRecords_DD,String queues_billing_tableRecords, List<String> list) throws Throwable {
 		// TODO Auto-generated method stub
@@ -1145,65 +1121,15 @@ public class CommonReusables extends ActionEngine implements OR_LoginPage,
 		return flag;
 
 	}
-	
-	protected boolean verifyMenuNotification(String menu,String subMenu,String panelTitle, String text) throws Throwable
-	{
-		boolean flag = false;
-		JSClick(menu);
-		JSClick(subMenu);
-		waitForElementPresent(panelTitle, 60);
-		flag = verifyText(panelTitle, text, "Panel Title");
-		return flag;
-		
+	 /** 
+	  * This method is written to do get counts
+	 */
+	protected String getCount(String text) {
+		// TODO Auto-generated method stub
+		text = text.trim();
+		text = text.substring(0, text.length() - 1);
+		return text.substring(8, text.length());
 	}
-	
-	protected boolean verifyByReducingBrowseSize(String reports, String menu,String submenu, String textElement, String text) throws Throwable {
-		setBrowserTo80Size();
-		aclick(reports,"Reports Link");
-		aactionsClick(menu,menu);		
-		aJSClick(submenu,submenu);
-        waitForElementPresent(textElement, 200);
-        return verifyText(textElement,  text, "Verifying HeadLine text");
-	}
-	
-	protected void typeAndVerify10DiscountPrice(String text, int n) throws Throwable{
-    	
-		String customerDashboard_addMAC_productAddNew_productTextBox;
-		String customerDashboard_addMAC_productAddNew_unitPrice;
-		String customerDashboard_addMAC_productAddNew_discountPrice;
-		customerDashboard_addMAC_productAddNew_productTextBox="xpath=//*[@id='ptable']/tbody/tr["+n+"]/td[1]/span/input[2]";
-		customerDashboard_addMAC_productAddNew_unitPrice="xpath=//*[@id='ptable']/tbody/tr["+n+"]/td[6]/input";
-		customerDashboard_addMAC_productAddNew_discountPrice="xpath=//*[@id='ptable']/tbody/tr["+n+"]/td[7]/div/input[1]";
-    	
-		scrollElementIntoView(customerDashboard_addMAC_productAddNew_productTextBox);
-    	Thread.sleep(5000);
-    	clearText(customerDashboard_addMAC_productAddNew_productTextBox);
-    	type(customerDashboard_addMAC_productAddNew_productTextBox, text, "");
-		type(customerDashboard_addMAC_productAddNew_productTextBox, "", Keys.ARROW_DOWN , Keys.ENTER);
-		Thread.sleep(9000);
-		String unitPrice= getAttributeValue(customerDashboard_addMAC_productAddNew_unitPrice, "value");
-		String discountPrice=getAttributeValue(customerDashboard_addMAC_productAddNew_discountPrice, "value");
-		
-		
-		Double result = Double.parseDouble(unitPrice);			
-		System.out.println(result);
-		Double d= (result/100)*10;
-		double discountPriceAmount=result-d;
-		
-		DecimalFormat df = new DecimalFormat("#.##");
-		System.out.println(df.format(discountPriceAmount));
-		String discountPriceamt =df.format(discountPriceAmount);
-		
-		System.out.println("unit"+unitPrice);
-		System.out.println("discount"+discountPrice);
-		System.out.println("discount"+d);
-		System.out.println("converted"+discountPriceamt);
-		
-        //System.out.println(df.format(Double.toString(discountPriceAmount)));
-		Assert.assertTrue(discountPrice.contains(discountPriceamt));
-		logPass("Verified "+discountPrice+ "is matching after converting price to " +discountPriceamt);
-    }
-	
 	
 	
 

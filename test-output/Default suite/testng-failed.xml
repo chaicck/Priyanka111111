@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage">
+      <class name="testCases.VerifyInfoFromBroadWorks">
         <methods>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
-          <include name="tC_1_80_Verify2NewGroupsUnderGroups_TicketPage"/>
-          <include name="afterMethod"/>
+          <include name="verifyInfoFromBroadWorks"/>
           <include name="beforeMethod"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- testCases.TC_1_80_Verify2NewGroupsUnderGroups_TicketPage -->
+      </class> <!-- testCases.VerifyInfoFromBroadWorks -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

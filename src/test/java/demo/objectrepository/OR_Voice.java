@@ -63,29 +63,4 @@ public interface OR_Voice {
     String voice_Number_manage_moveCheckedTnsBtn_save="xpath=//button[text()='Save']";
     
     String voice_Number_manage_table_start="xpath=//*[@id='number_table']/tbody/tr/td[8]";
-    
-    String voice_number_penIcons_customer_shippingAddress_searchBox="xpath=//div[@class='chosen-search']/input";
-    String voice_number_penIcons_customer_shippingAddress_searchResult="xpath=//ul[@class='chosen-results']/li";
-    
-    String voine_numbers_AssignNumbersFrmInventoryBtn="xpath=//*[@id='number_table']/caption/a[2]";
-	String voine_numbers_AssignNumbersFrmInventoryBtn_rateCenterName_DD="name=rate_center_name";
-	String voine_numbers_AssignNumbersFrmInventoryBtn_search="xpath=(//button[@type='submit'])[3]";
-	String voine_numbers_AssignNumbersFrmInventoryBtn_search_playBtn="xpath=//a[@class='select_numbers']";
-	String voine_numbers_AssignNumbersFrmInventoryBtn_search_mobileNumber="xpath=//*[@id='number_table']/tbody/tr[1]/td[4]";
-	String voine_numbers_AssignNumbersFrmInventoryBtn_search_playBtn_assign="xpath=//button[text()='Assign Numbers']";
-	
-	String voice_number_internationalDIDs="link=International DIDs";
-	String voice_number_internationalDIDs_textBoxEntry="xpath=(//input[@type='text'])[2]";
-	String voice_number_internationalDIDs_save="xpath=//button[@form='international_did']";
-	String voice_number_internationalDIDs_helpIcon="xpath=//i[@class='fa  fa-question-circle ']";
-	String voice_number_internationalDIDs_tooltipText="xpath=//div[@role='tooltip']";
-	String voice_number_internationalDIDs_numbersCount="xpath=//*[@id='international_table']/caption/span";
-	String voice_number_internationalDIDs_errorMsg="xpath=//div[@class='alert alert-danger alert-dismissable']";
-	String voice_number_internationalDIDs_errorMsg_Xbtn="xpath=//div[@class='alert alert-danger alert-dismissable']/button";
-	
-	
-	String voice_number_internationalDIDs_successMsg="xpath=//div[@class='alert alert-success alert-dismissable']";
-	String voice_number_internationalDIDs_successMsg_Xbtn="xpath=//div[@class='alert alert-success alert-dismissable']/button";
-	String voice_number_internationalDIDs_NumbersList="xpath=//div[@class='bootstrap-tagsinput']/span";
-	String voice_number_internationalDIDs_NumbersList_X_parametarised="xpath=(//div[@class='bootstrap-tagsinput']/span/span)[%s]";
 }

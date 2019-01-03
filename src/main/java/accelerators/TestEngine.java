@@ -3,12 +3,12 @@ package accelerators;
 import com.relevantcodes.extentreports.DisplayOrder;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,6 +17,7 @@ import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.xml.sax.SAXException;
 
@@ -28,7 +29,6 @@ import javax.xml.xpath.XPathExpressionException;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
@@ -105,15 +105,43 @@ public class TestEngine extends ExcelUtils {
 		Thread.sleep(1000);
 		// Dimension d=new Dimension(1382, 744);
 		// Driver.manage().window().setSize(d);
-		System.out.println(Driver.manage().window().getSize());
+//		System.out.println(Driver.manage().window().getSize());
 		Driver.manage().window().maximize();
-		System.out.println(Driver.manage().window().getSize());
 		Driver.manage().deleteAllCookies();
 		Driver.get(baseUrl);
 		Driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
 	}
 
+	/**
+	 * This method is used call after each method execution, if any test cases
+	 * fails, it is used to capture screen shots and finally performs logout
+	 * functionality ends the extent logger & flush the extent results and then
+	 * quit the browser
+	 *
+	 */
+
+	@AfterMethod(alwaysRun = true, enabled = true)
+	public void afterMethod(ITestResult result) throws Throwable {
+
+		try {
+	        if(result.getStatus()==ITestResult.FAILURE){
+	            logger.log(LogStatus.FAIL,"Failed test is: "+result.getName());
+	            logger.log(LogStatus.FAIL, result.getThrowable());
+//	            logger.log(LogStatus.FAIL, logger.addScreenCapture(capture(Driver, "screenShot")));
+	        }
+	        else if(result.getStatus()==ITestResult.SKIP){
+	            logger.log(LogStatus.SKIP,"Skipped test is: "+result.getName());
+	        } 
+	    	}
+	     
+	        finally {	
+	        extent.endTest(logger);
+	        extentTestEndflag=true;
+	        extent.flush();
+	    	Driver.quit();
+	        }
+	}
 	/**
 	 * extent report logger ending extent report flush extent report close
 	 */
@@ -152,39 +180,10 @@ public class TestEngine extends ExcelUtils {
 							+ "\\Drivers\\chromedriver.exe");
 			capabilities = DesiredCapabilities.chrome();
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--disable-extensions");
-			options.addArguments("-incognito");
-			options.addArguments("test-type");
-			options.addArguments("start-maximized");
-			options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
-			options.setExperimentalOption("useAutomationExtension", false);
-			capabilities.setCapability("chrome.exe", "C:\\Program Files (x86)\\Google\\Chrome\\Application");
-			capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
-			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-			this.WebDriver = new ChromeDriver(capabilities);
-			WebDriver.manage().deleteAllCookies();
-			break;
-		
-	  /* case "firefox":
-			System.setProperty("webdriver.gecko.driver",
-					System.getProperty("user.dir")
-							+ "\\Drivers\\geckodriver.exe");
-			capabilities = new DesiredCapabilities();
-			capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS,
-					true);
-			this.WebDriver = new FirefoxDriver(capabilities);
-			break;
-		case "chrome":
-
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir")
-							+ "\\Drivers\\chromedriver.exe");
-			capabilities = DesiredCapabilities.chrome();
-			ChromeOptions options = new ChromeOptions();
 			options.addArguments("test-type");
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			this.WebDriver = new ChromeDriver();
-			break;*/
+			break;
 		}
 	}
 
@@ -202,6 +201,10 @@ public class TestEngine extends ExcelUtils {
 	public String capture(WebDriver driver, String screenShotName)
 			throws IOException {
 		
+		if(driver == null)
+		{
+			driver = this.WebDriver;
+		}
 		String ss = String.format(getCurrentTimeStamp(), screenShotName)
 				+ ".png";
 		TakesScreenshot ts = (TakesScreenshot) driver;

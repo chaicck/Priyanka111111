@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="DemoFramework" verbose="10">
+<suite name="DemoFramework" verbose="10" configfailurepolicy="skip">
 	<test name="DemoTest">
 			<parameter name="baseUrl" value="https://zeus.qa5.vonagenetworks.net"/>
 		<parameter name="browser" value="chrome" />
@@ -25,31 +25,41 @@
 		 <class name="testCases.TC_1_64_Verify_Representative_choose_WAN_versionOf_VeloCloud"/>
 		 <class name="testCases.TC_1_66_Fax_back_Management"/>
 		 <class name="testCases.TC_1_67_VerifyNewInterfacecreatedForPlatformConfigured"/>
-		 <class name="testCases.TC_1_7_CustomerVoiceInterNationalDIDs"/>
-               
-                 <class name="testCases.Circuit"/>
-                <class name="testCases.Circuit"/>
+	 <class name="testCases.DevicePageLoadingVerification"/>
+         
+         
+         	  <class name="testCases.Number_search"/>
+                   <class name="testCases.C3"/>
+                <class name="testCases.Customer_Search"/>
+                
+				 <class name="testCases.Faxmail"/>
+              
+				 	 <class name="testCases.VerifyInfoFromBroadWorks"/>
+				 	 
+				 	 	 <class name="testCases.DevicePageLoadingVerification"/>
+				 
+              
+                
+         	  <class name="testCases.Number_search"/>
+                   <class name="testCases.C3"/>
+                <class name="testCases.Customer_Search"/>
+                
+				 <class name="testCases.Faxmail"/>
 		 -->
-			<class name="testCases.TC_1_32_AgentCreateReassignTicketsfromHelpSpot"/>
-			<class name="testCases.TC_1_83_Admin_Carriers"/> 
-               <class name="testCases.Billing_CreditRequest"/>
-		<class name="testCases.CDRConfig"/>
-               <class name="testCases.AdminDropDown"/>
-                <class name="testCases.SearchDropDown"/>
-                <class name="testCases.TC_1_97_SubmitTheReconFix"/>
-                <class name="testCases.ProjectManager_EditSave"/> 
-		
-		 <class name="testCases.VerifyReceonciliationPremierCount"/>
-		<class name="testCases.TC_1_7_CustomerVoiceInterNationalDIDs"/>
-		<class name="testCases.TC_1_10_ExportChildCustomerList"/>	
-	        <class name="testCases.TC_1_100_Sales_Order_Edit"/>
-	   	<class name="testCases.TC_1_11_VerifyFunctionalitiesOnHomePage"/>	
-         	<class name="testCases.TC_1_12_Number_management_Search_customerForEdit"/>	
-	  	<class name="testCases.TC_1_37_EditProjectTasks"/>
-	  	<class name="testCases.DNS"/>
-	  	<class name="testCases.TC_1_5_CustomerDashboard_Data_CDR_Config"/>	
-		<class name="testCases.TC_1_52_DIDs_Displayed_Number_Activation"/>
-	   
+			
+              
+				 	 <class name="testCases.VerifyInfoFromBroadWorks"/>
+                
+                 	 <class name="testCases.DevicePageLoadingVerification"/>
+				 
+              
+                
+         	  <class name="testCases.Number_search"/>
+                   <class name="testCases.C3"/>
+                <class name="testCases.Customer_Search"/>
+                
+				 <class name="testCases.Faxmail"/>
+					
 		</classes>
 	</test>
 </suite>

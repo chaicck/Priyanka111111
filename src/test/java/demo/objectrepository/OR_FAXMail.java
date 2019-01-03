@@ -15,6 +15,13 @@ public interface OR_FAXMail {
     String chooseCoverSheetFile ="id=coversheet_file";
     String uploadBtn ="xpath=(//button[@type='submit'])[2]";
     String successOkBtn ="xpath=//div[@class='alert alert-success']/button";
+    
+	
+ 
+
+    String faxmail_btn = "id=notification-faxmail";
+    String Verifytext_faxmail_user = "xpath=//caption[text()='FaxMail Users ']";
+    String Verify_faxmail_table = "xpath=//div[@class='col-sm-12']";
 
 
 }

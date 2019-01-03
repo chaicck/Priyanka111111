@@ -27,6 +27,7 @@ public interface OR_Billing {
 	String Reconciliation_tableProducts = "xpath=//*[@id='recon']/tbody/tr/td[2]";
 	String Reconciliation_tableContractedParametarised = "xpath=//*[@id='recon']/tbody/tr[%s]/td[3]";
 
+	
 	String Queues_Billing = "id=notification-billing";
 	String billing_credit_request_creditIDFromTable_parametarised = "xpath=//*[@id='credit-request-table']/tbody/tr[%s]/td[1]/a";
 	String Queues_Billing_BillingDayLegend = "xpath=//table[@class='table table-condensed table-nonfluid table-striped']/thead";
@@ -49,5 +50,4 @@ public interface OR_Billing {
 	String queues_billing_billQueueTable_processLinks = "xpath=//*[@id='DataTables_Table_0']/tbody/tr/td[1]";
 	String queues_billing_billQueueTable_customerIDs_parameter = "xpath=(//*[@id='DataTables_Table_0']/tbody/tr/td[2])[%s]";
 
-	
 }

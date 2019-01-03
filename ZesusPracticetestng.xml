@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" verbose="10" configfailurepolicy="skip">
   <test thread-count="5" name="Test">
-  <parameter name="baseUrl" value="https://zeus.qa5.vonagenetworks.net"/>
+  <parameter name="baseUrl" value="https://zeus.qa6.vonagenetworks.net"/>
  <parameter name="browser" value="chrome" />
     <classes>
    
@@ -145,7 +145,7 @@
  -->
 
   <class name ="testCases.TC_1_18_MacProject"/>
-   <class name ="testCases.TC_1_2_ReportHighLevelFunctionality_ReportsDropDown"/>
+  
   <class name ="testCases.TC_1_10_ExportChildCustomerList"/>
   <class name ="testCases.TC_1_100_Sales_Order_Edit"/>
    <class name ="testCases.TC_1_32_AgentCreateReassignTicketsfromHelpSpot"/>

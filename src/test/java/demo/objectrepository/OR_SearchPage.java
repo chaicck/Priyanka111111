@@ -2,7 +2,6 @@ package demo.objectrepository;
 
 public interface OR_SearchPage {
 	
-    String srchTxt = "css=input#search";
     String search_inventorySearchbox="xpath=(//input[@name='search'])[2]";
     String firstParentIdLnk = "xpath=(//table[@id='customer_table']/tbody/tr)[1]/td[8]/a";
 

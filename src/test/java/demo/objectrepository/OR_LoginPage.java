@@ -11,6 +11,12 @@ public interface OR_LoginPage {
     String passwordTextBox = "xpath=//input[@name='pass']";
     String loginButton = "xpath=//button[@type='submit']";
     String lognFailed = "xpath=//*[@class='alert alert-danger']";
+    
+    // common xpath for all the pages
+    
+    String srchDd="id=dd-Search";
+    String srchTxt = "css=input#search";
+
 
 
 }
